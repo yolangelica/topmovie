@@ -1,0 +1,33 @@
+*{
+	margin: 0;
+	padding: 0;
+	font-family: 'Acme', sans-serif;
+}
+body{
+	background: #18212E;
+}
+
+.logo{
+	width: 5em;
+}
+
+.txt{
+	font-size: 1.5em;
+	color:#858d99;
+}
+ a:hover{
+	color:#ff4081;
+	
+}
+.box-input{
+	box-sizing: inherit;
+	border-radius: 0.5em;
+}
+
+.txt-1{
+	color: #fff;
+}
+.txt-2{
+	color:#fff;
+
+}
