@@ -1,87 +1,105 @@
-<html lang="en">
+<html lang="es">
 <head>
-     <meta charset="UTF-8">
-    <!-- Compiled and minified CSS -->
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-alpha.3/css/materialize.min.css">
-
-   <!--Import Google Icon Font-->
-      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    
-
-  <link rel="stylesheet" href="assets/css/main.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>TopMovie</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Movie top</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-alpha.3/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+  <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+	<link rel="stylesheet" href="assets/css/main.css">
 </head>
-  <body>
-   
-<!-- Dropdown Structure -->
-<ul id="dropdown1" class="dropdown-content">
-  <li><a href="#!">Mi perfil</a></li>
-  <li><a href="#!">Ayuda</a></li>
-  <li class="divider"></li>
-  <li><a href="#!">Cerrar Sesion</a></li>
-</ul>
-<nav>
-  <div class="nav-wrapper  grey darken-3">
-  
-     <a  href="#!" class="brand-logo  purple-text "><img class="logo" src="assets/images/logo-top.png"></a>
 
- 
-    <ul class="right hide-on-med-and-down">
-      <li><a class="txt" href="sass.html">Generos</a></li>
-      <li><a class="txt" href="badges.html">Listas Populares</a></li>
-      <li><a class="txt" href="badges.html">Explorar Peliculas</a></li>
+<body>
+	<header>
+		<!--navbar-->
+		<div class="container">
+			<!-- Dropdown Structure -->
+			<ul id="dropdown1" class="dropdown-content teal lighten-2">
+  			<li><a href="#!">one</a></li>
+  			<li><a href="#!">two</a></li>
+  			<li class="divider"></li>
+  			<li><a href="#!">three</a></li>
+			</ul>
+			<nav>
+  			<div class="nav-wrapper black lighten-2">
+    			<img src="assets/img/Popcorn (1).png" alt="" class="logo responsive-img">
+    			<ul class="right hide-on-med-and-down">
+      			<li><a href="index2.html" class="text-nav" id="btnHome">Home</a></li>
+      			
+      			<!-- Dropdown Trigger -->
+      			<li><a id="btnProfileUser"	class="dropdown-button text-nav" href="#!" data-activates="dropdown1">Perfil<i class="material-icons right text-nav">arrow_drop_down</i></a></li>
+    			</ul>
+  			</div>
+			</nav>
+		</div>
+	</header>
 
-      <!-- Dropdown Trigger -->
-      <li><a class="dropdown-button txt" href="#!" data-activates="dropdown1">Cuenta<i class="material-icons right">arrow_drop_down</i></a></li>
-    </ul>
-  </div>
-</nav>
+	<section id="home">
+		<div class="container"><!--input busqueda-->
+			<div class="row">
+				<div class="col m12">
+					<div class="input-field">
+      			<input id="search" type="search" required>
+         		<label class="label-icon" for="search"><i class="material-icons">search</i></label>
+         		<i class="material-icons">close</i>
+       		</div>
+				</div>
+			</div>
+			<div class="row"><!--IMAGEN PRINCIPAL *cambiar por video-->
+				<div class="col s12 carousel">
+ 					<div class="carousel carousel-slider">
+    				<a class="carousel-item" href="#one!"><img src="https://lorempixel.com/800/400/food/1"></a>
+    				<a class="carousel-item" href="#two!"><img src="https://lorempixel.com/800/400/food/2"></a>
+    				<a class="carousel-item" href="#three!"><img src="https://lorempixel.com/800/400/food/3"></a>
+    				<a class="carousel-item" href="#four!"><img src="https://lorempixel.com/800/400/food/4"></a>
+  				</div>
+  			</div>
+			</div>
+			<div class="row">
+  			<div class="col s12">
+    			<div class="img-fondo">
+    				<h1 class="txt-1 center">Explora y guarda tu lista de peliculas que quieres ver</h1>
+    				<p class="txt-2 center">que nunca mas se te olvide aquella pelicula que te recomendaron</p>
+  				</div>
+  			</div>
+			</div>
+		</div><!--close container home-->
+	</section>
 
-<div class="input-field">
-         <input id="search" type="search" required>
-         <label class="label-icon" for="search"><i class="material-icons">search</i></label>
-         <i class="material-icons">close</i>
-       </div>
-<section class="videos">
-  <div class="row">
-    <div class="col s12">
- <div class="carousel carousel-slider">
-    <a class="carousel-item" href="#one!"><iframe width="854" height="480" src="https://www.youtube.com/embed/D6HpR7umnps" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>"></a>
-    <a class="carousel-item" href="#two!"><iframe width="854" height="480" src="https://www.youtube.com/embed/n7RkOfN8KvE" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></a>
-    <a class="carousel-item" href="#three!"><iframe width="854" height="480" src="https://www.youtube.com/embed/leIrosWRbYQ" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></a>
-    <a class="carousel-item" href="#four!"><iframe width="854" height="480" src="https://www.youtube.com/embed/ye8-GQNf8p0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></a>
-  </div>
-  </div>
-  </div>
-</section>
-        
-
-
-<div class="row">
-  <div class="col s12">
-    <div class="img-fondo">
-    <h1 class="txt-1 center">Explora y guarda tu lista de peliculas que quieres ver</h1>
-    <p class="txt-2 center">que nunca mas se te olvide aquella pelicula que te recomendaron</p>
-  
-  </div>
-  </div>
-</div>
-
-        
+	<!--PERFIL USUARIO-->
+	<section class="container hide" id="userProfile">
+		<div class="row">
+			<div class="col m4 hide-on-small-only ">
+				<div class="container-fluid container-profile">
+					<img src="assets/img/img-perfil.png" style="width:40%;" class="circle  responsive-img img-profile "  alt=""><!--agrega imagen perfil-->
+					<h6 class="colorTextProfile center-align" >nombre usuario</h6><!--nombre usuario-->
+					<h5>Mis peliculas</h5>
+					<h6>vistas</h6>
+					<h6>Pendientes</h6>
+					<h6>Mis Listas</h6>
+					<h6>Editar perfil</h6>
+				</div>
+			</div>
+			<div class="col s12 m8">
+				<div class="container-profile-movil">
+					<h3 class="text-profile">Perfil</h3>
+					<h6 class="colorTextProfile">nombre usuario</h6>
+				</div>
+				<h4 class="text-profile">Peliculas vistas</h4>
+				<h4 class="text-profile">Peliculas por ver</h4>
+				<h4 class="text-profile">Mis Listas</h4>
+				<button class="btn-profile">Editar Perfil</button>
+			</div>
+		</div>
+	</section>
 
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-<!--Import jQuery before materialize.js-->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="assets/js/app2.js"></script>
 
- <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
-          <!-- Compiled and minified JavaScript -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-alpha.3/js/materialize.min.js"></script>
-            
-<script type="text/javascript" src="assets/js/app.js"></script>
-   
+
 </body>
 </html>
- 
+
