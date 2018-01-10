@@ -17,8 +17,13 @@ var instance = M.Carousel.init({
 
 
 
-//OCULTA PAGINA AL HACER CLICK
+//aparece pagina perfil usuario
 $('#btnProfileUser').click(function(){
          $('#home').addClass("hide");
          $('#userProfile').removeClass("hide");
      }); 
+//aparece pagina home
+$('#btnHome').click(function(){
+	$('#userProfile').addClass("hide");
+	$('#home').removeClass("hide");
+})
