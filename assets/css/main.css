@@ -4,11 +4,12 @@
 	font-family: 'Acme', sans-serif;
 }
 body{
-	background: #18212E;
+	background-color: #212121;
 }
 
 .logo{
-	width: 5em;
+	width: 3em;
+	margin-left: 2em;
 }
 
 .txt{
@@ -16,7 +17,7 @@ body{
 	color:#858d99;
 }
  a:hover{
-	color:#ff4081;
+	color:#ab47bc;
 	
 }
 .box-input{
@@ -30,4 +31,35 @@ body{
 .txt-2{
 	color:#fff;
 
+}
+
+/* *//*navegador*/
+.text-nav {
+	color:#bdbdbd ;
+}
+
+/*perfil usuario*/
+.colorTextProfile{
+color:#ab47bc ;
+}
+.container-profile{
+	border:1px solid black;
+	padding:7%;
+	background-color: #FFFFFF;
+}
+.img-profile{
+	margin-left: 29%;
+}
+
+.container-profile-movil{
+	border-bottom: 1px solid black;
+	
+}
+.btn-profile{
+	background-color:  black;
+	border-radius: 15px;
+	color:#fff;
+}
+.text-profile{
+	color:#fff;
 }

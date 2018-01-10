@@ -1,5 +1,6 @@
 $(document).ready( function (){
 	$(".dropdown-button").dropdown();
+<<<<<<< HEAD
 
 var instance = M.Carousel.init({
     fullWidth: true
@@ -12,3 +13,15 @@ var instance = M.Carousel.init({
   });
   
 });
+=======
+ });
+
+//OCULTA PAGINA AL HACER CLICK
+$('#btnProfileUser').click(function(){
+         $('#home').addClass("hide");
+         $('#userProfile').removeClass("hide");
+     }); 
+
+
+
+>>>>>>> reune ambos trabajos en un solo index elimina css2 agrega logo

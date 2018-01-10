@@ -8,10 +8,13 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
       <!--Import materialize.css-->
   <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
-	<link rel="stylesheet" href="assets/css/main2.css">
+	<link rel="stylesheet" href="assets/css/main.css">
 </head>
+
 <body>
+
 	<header>
+		<!--navbar-->
 		<div class="container">
 			<!-- Dropdown Structure -->
 			<ul id="dropdown1" class="dropdown-content teal lighten-2">
@@ -22,26 +25,57 @@
 			</ul>
 			<nav>
   			<div class="nav-wrapper black lighten-2">
-    			<a href="#!" class="brand-logo  purple accent-3 black-text ">Logo</a>
+    			<img src="assets/img/Popcorn (1).png" alt="" class="logo responsive-img">
     			<ul class="right hide-on-med-and-down">
-      			<li><a href="sass.html" class="text-nav">Home</a></li>
-      			<li><a href="badges.html" class="text-nav">buscador</a></li>
+      			<li><a href="index2.html" class="text-nav" id="btnHome">Home</a></li>
+      			
       			<!-- Dropdown Trigger -->
-      			<li><a class="dropdown-button text-nav" href="#!" data-activates="dropdown1">Perfil<i class="material-icons right text-nav">arrow_drop_down</i></a></li>
+      			<li><a id="btnProfileUser"	class="dropdown-button text-nav" href="#!" data-activates="dropdown1">Perfil<i class="material-icons right text-nav">arrow_drop_down</i></a></li>
     			</ul>
   			</div>
 			</nav>
 		</div>
-		
 	</header>
+
+	<section id="home">
+		<div class="container"><!--input busqueda-->
+			<div class="row">
+				<div class="col m12">
+					<div class="input-field">
+      			<input id="search" type="search" required>
+         		<label class="label-icon" for="search"><i class="material-icons">search</i></label>
+         		<i class="material-icons">close</i>
+       		</div>
+				</div>
+			</div>
+			<div class="row"><!--IMAGEN PRINCIPAL *cambiar por video-->
+				<div class="col s12 carousel">
+ 					<div class="carousel carousel-slider">
+    				<a class="carousel-item" href="#one!"><img src="https://lorempixel.com/800/400/food/1"></a>
+    				<a class="carousel-item" href="#two!"><img src="https://lorempixel.com/800/400/food/2"></a>
+    				<a class="carousel-item" href="#three!"><img src="https://lorempixel.com/800/400/food/3"></a>
+    				<a class="carousel-item" href="#four!"><img src="https://lorempixel.com/800/400/food/4"></a>
+  				</div>
+  			</div>
+			</div>
+			<div class="row">
+  			<div class="col s12">
+    			<div class="img-fondo">
+    				<h1 class="txt-1 center">Explora y guarda tu lista de peliculas que quieres ver</h1>
+    				<p class="txt-2 center">que nunca mas se te olvide aquella pelicula que te recomendaron</p>
+  				</div>
+  			</div>
+			</div>
+		</div><!--close container home-->
+	</section>
+
 	<!--PERFIL USUARIO-->
-	<section class="container">
-	
+	<section class="container hide" id="userProfile">
 		<div class="row">
 			<div class="col m4 hide-on-small-only ">
 				<div class="container-fluid container-profile">
 					<img src="assets/img/img-perfil.png" style="width:40%;" class="circle  responsive-img img-profile "  alt=""><!--agrega imagen perfil-->
-					<h6 class="color-text-profile center-align" >nombre usuario</h6><!--nombre usuario-->
+					<h6 class="colorTextProfile center-align" >nombre usuario</h6><!--nombre usuario-->
 					<h5>Mis peliculas</h5>
 					<h6>vistas</h6>
 					<h6>Pendientes</h6>
@@ -52,7 +86,7 @@
 			<div class="col s12 m8">
 				<div class="container-profile-movil">
 					<h3 class="text-profile">Perfil</h3>
-					<h6 class="color-text-profile">nombre usuario</h6>
+					<h6 class="colorTextProfile">nombre usuario</h6>
 				</div>
 				<h4 class="text-profile">Peliculas vistas</h4>
 				<h4 class="text-profile">Peliculas por ver</h4>
@@ -60,12 +94,13 @@
 				<button class="btn-profile">Editar Perfil</button>
 			</div>
 		</div>
-		
 	</section>
 
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
 <script src="assets/js/app2.js"></script>
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+
+
 </body>
 </html>
 
