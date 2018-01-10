@@ -1,6 +1,3 @@
-$(document).ready( function (){
-	$(".dropdown-button").dropdown();
-
 var instance = M.Carousel.init({
     fullWidth: true
   });
@@ -10,5 +7,4 @@ var instance = M.Carousel.init({
   $('.carousel.carousel-slider').carousel({
     fullWidth: true
   });
-  
-});
+   var instance = M.Carousel.getInstance(elem);
