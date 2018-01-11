@@ -1,4 +1,7 @@
+/* ========== AUTENTICACION FIREBASE =========== */
+
 // SIGN UP:
+var newUserName = $('#newUserName').val();
 var newName = $('#newName').val();
 var newLastName = $('#newLastName').val();
 var newUserName = $('#newUserName').val();
@@ -6,11 +9,8 @@ var newEmail = $('#newEmail').val();
 var newPassword = $('#newPassword').val();
 
 function signUp() {
-  firebase.auth().createUserWithEmailAndPassword(newEmail, newPassword).catch(function (error) {
-    console.log('Registro exitoso!');
-    $('#success').append(
-      "<p>Registro exitoso!</p>"
-    );
+  firebase.auth().createUserWithEmailAndPassword(newEmail, newPassword)
+  .catch(function (error) {
     // Handle Errors here.
     var errorCode = error.code;
     var errorMessage = error.message;
@@ -23,9 +23,9 @@ var email = $('#email').val();
 var password = $('#password').val();
 
 function signIn() {
-  firebase.auth().signInWithEmailAndPassword(email, password).catch(function (error) {
+  firebase.auth().signInWithEmailAndPassword(email, password)
+  .catch(function (error) {
     console.log('Ingreso exitoso!');
-    watcher();
     // Handle Errors here.
     var errorCode = error.code;
     var errorMessage = error.message;
@@ -38,6 +38,12 @@ function watcher() {
   firebase.auth().onAuthStateChanged(function (user) {
     if (user) {
       // User is signed in.
+      console.log('Usuario activo!');
+      console.log(user);
+      $('#videoCover').hide();
+      $('#catchPhrase').hide();
+       $('#btnProfileUser').show();
+      $('#logInBtn').hide();
       var displayName = user.displayName;
       var email = user.email;
       var emailVerified = user.emailVerified;
@@ -48,10 +54,39 @@ function watcher() {
       // ...
     } else {
       // User is signed out.
-      // ...
+      $('#videoCover').show();
+      $('#catchPhrase').show();
+      $('#btnProfileUser').hide();
+      $('#logInBtn').show();
+      console.log('No hay usuario activo!');
     }
   });
 }
+watcher();
+
+// Autenticación Google;
+var provider = new firebase.auth.GoogleAuthProvider();
+
+function google() {
+  firebase.auth().signInWithPopup(provider).then(function(result) {
+  // This gives you a Google Access Token. You can use it to access the Google API.
+  var token = result.credential.accessToken;
+  // The signed-in user info.
+  var user = result.user;
+  // ...
+  }).catch(function(error) {
+    // Handle Errors here.
+    var errorCode = error.code;
+    var errorMessage = error.message;
+    // The email of the user's account used.
+    var email = error.email;
+    // The firebase.auth.AuthCredential type that was used.
+    var credential = error.credential;
+    // ...
+  });
+}
+
+/* ========== FIN AUTENTICACION FIREBASE =========== */
 
 
 $(document).ready(function () {
@@ -195,17 +230,6 @@ $(document).ready(function () {
       // console.log(PosterModal, titleModal, yearModal, actorsModal, directorModal, plotModal);
       var newName = $('.contentModalMylist')
         .append(titleModal);
-
-
-
-
-
-
-
-
-
-
-
     };
   });
 
@@ -217,7 +241,4 @@ $(document).ready(function () {
     // Your Code
     var searchViewed = ($(this).parent().parent().find('.title').text());
   });
-
-
-
 });
