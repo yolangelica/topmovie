@@ -21,6 +21,7 @@ nav{
 }
  a:hover{
 	color:#ab47bc;
+	background-color: #000;
 	
 }
 .box-input{
@@ -66,11 +67,11 @@ color:#ab47bc ;
 .text-profile{
 	color:#fff;
 }
-<<<<<<< HEAD
+
 #copyright{
 	margin-left: 15.6em;
-=======
 
+}
 /**/
 .coverMovies{
 	border: 6px solid white;
@@ -78,5 +79,5 @@ color:#ab47bc ;
 
 .carousel{
 	margin-top: 0;
->>>>>>> agrega 3 carrusel a perfil usuario
+
 }
