@@ -1,27 +1,78 @@
 <html lang="es">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>Top Movie</title>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-alpha.3/css/materialize.min.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Top Movie</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-alpha.3/css/materialize.min.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/main.css">
 </head>
 <body>
-	<header>
-		<!-- Navbar -->
-		<nav>
-			<div class="nav-wrapper black lighten-2">
-  			<img src="assets/img/Popcorn (2).png" alt="" class="logo">
-  			<ul class="right hide-on-med-and-down">
-    			<li><a class="text-nav" id="btnHome">Home</a></li>
-          <li><a id="logInBtn" class="waves-effect waves-light btn purple modal-trigger" href="#modal1">INGRESAR</a></li>
-    			<!-- Dropdown Trigger -->
-    			<li><a id="btnProfileUser"	class="dropdown-button text-nav" href="#!" data-activates="dropdown1">Perfil </a></li>
-  			</ul>
-			</div> 
-		</nav>
+  <header>
+    <!-- Navbar -->
+    <nav>
+      <div class="nav-wrapper black lighten-2">
+        <img src="assets/img/Popcorn (2).png" alt="" class="logo">
+        <ul class="right hide-on-med-and-down">
+          <li>
+            <a class="text-nav" id="btnHome">Home</a>
+          </li>
+          <li>
+            <a href="#ModalViewed" class="text-nav modal-trigger" id="btnViewed">Vistas</a>
+          </li>
+          <!-- Inicio del Modal Viewed -->
+          <div id="ModalViewed" class="modal">
+            <div class="modal-content colorViews">
+              <h4>Lista de las películas vistas</h4>
+              <p>A bunch of text</p>
+            </div>
+            <div class="modal-footer">
+              <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Visto</a>
+            </div>
+          </div>
+          <!-- Fin del Modal Viewed -->
+
+          <li>
+            <a href="#ModalPending" class="text-nav modal-trigger" id="btnPending">Pendientes</a>
+          </li>
+
+          <!-- Inicio del Modal Pending -->
+          <div id="ModalPending" class="modal">
+            <div class="modal-content colorViews">
+              <h4>Lista de las películas pendientes</h4>
+              <p>A bunch of text</p>
+            </div>
+            <div class="modal-footer">
+              <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Visto</a>
+            </div>
+          </div>
+          <!-- Fin del Modal Pending -->
+
+          <li>
+            <a href="#ModalMylist" class="text-nav modal-trigger" id="btnMylist">Mi Lista</a>
+          </li>
+
+          <!-- Inicio del Modal Mylist -->
+          <div id="ModalMylist" class="modal">
+            <div class="modal-content colorViews">
+              <h4 class="contentModalMylist">Mi Lista</h4>
+            </div>
+            <div class="modal-footer">
+              <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Visto</a>
+            </div>
+          </div>
+          <!-- Fin del Modal Mylist -->
+          <li>
+            <a class="waves-effect waves-light btn purple modal-trigger" href="#modal1">INGRESAR</a>
+          </li>
+          <!-- Dropdown Trigger -->
+          <li>
+            <a id="btnProfileUser" class="dropdown-button text-nav" href="#!" data-activates="dropdown1">Perfil </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
     <!-- SIGN IN Modal Structure -->
     <div id="modal1" class="modal modal-fixed-footer">
       <div class="modal-content">
@@ -42,24 +93,34 @@
             </div>
             <div class="row">
               <div class="col s6 offset-s3 center">
-                <a class="waves-effect waves-light btn purple modal-action modal-close" onclick="signIn()">Entrar</a>  
+                <a class="waves-effect waves-light btn purple modal-action modal-close" onclick="signIn()">Entrar</a>
               </div>
             </div>
             <div class="row">
               <div class="col s12 center">
                 <p class="modalTxt">O ingresa con tus redes sociales:</p>
-                <a id="googleBtn" onclick="google()"><i class="fa fa-google fa-2x" aria-hidden="true"></i></a>
-                <a id="facebookBtn"><i class="fa fa-facebook-official fa-2x" aria-hidden="true"></i></a>
-                <p>No tienes una cuenta? <a id="register" class="modal-action modal-close modal-trigger" href="#modal2">Regístrate!</a> Olvidaste tu contraseña? <a href="#">Recupérala!</a></p>                
+                <a id="googleBtn" onclick="google()">
+                  <i class="fa fa-google fa-2x" aria-hidden="true"></i>
+                </a>
+                <a id="facebookBtn">
+                  <i class="fa fa-facebook-official fa-2x" aria-hidden="true"></i>
+                </a>
+                <p>No tienes una cuenta?
+                  <a id="register" class="modal-action modal-close modal-trigger" href="#modal2">Regístrate!</a> Olvidaste tu contraseña?
+                  <a href="#">Recupérala!</a>
+                </p>
               </div>
             </div>
           </form>
         </div>
       </div>
       <div class="modal-footer">
-        <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat"><i class="material-icons">close</i></a>
+        <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">
+          <i class="material-icons">close</i>
+        </a>
       </div>
-    </div> <!-- fin Modal -->
+    </div>
+    <!-- fin Modal -->
     <!-- SIGN UP Modal Structure -->
     <div id="modal2" class="modal modal-fixed-footer">
       <div class="modal-content">
@@ -94,33 +155,39 @@
               <div class="col s6 center purple-text" id="success">
                 <!-- Mensaje Registro exitoso -->
               </div>
-            <div class="row">
-              <div class="col s6 offset-s3 center">
-                <a class="waves-effect waves-light btn purple" onclick="signUp()">Registrar</a> 
+              <div class="row">
+                <div class="col s6 offset-s3 center">
+                  <a class="waves-effect waves-light btn purple" onclick="signUp()">Registrar</a>
+                </div>
               </div>
-            </div>
-            <div class="row">
-              <div class="col s6 offset-s3 center">
-                <p>Ya tienes una cuenta? <a class="modal-action modal-close modal-trigger" href="#modal1">Inicia sesión!</a></p>               
+              <div class="row">
+                <div class="col s6 offset-s3 center">
+                  <p>Ya tienes una cuenta?
+                    <a class="modal-action modal-close modal-trigger" href="#modal1">Inicia sesión!</a>
+                  </p>
+                </div>
               </div>
-            </div>
           </form>
-        </div>
-      </div>
-      <div class="modal-footer">
-        <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat"><i class="material-icons">close</i></a>
-      </div>
-    </div> <!-- fin Sign Up Modal -->
-	</header>  
-  <!-- VISTA PRINCIPAL -->
-	<section id="home">
-		<!-- Video cover -->
-    <div id="videoCover" class="row">
-        <div class="col s12 ">
-          <div class="video-container">
-            <iframe width="854" height="480" src="https://www.youtube.com/embed/n7RkOfN8KvE" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
           </div>
         </div>
+        <div class="modal-footer">
+          <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">
+            <i class="material-icons">close</i>
+          </a>
+        </div>
+      </div>
+      <!-- fin Sign Up Modal -->
+  </header>
+  <!-- VISTA PRINCIPAL -->
+  <section id="home">
+    <!-- Video cover -->
+    <div class="row">
+      <div class="col s12 ">
+        <div class="video-container">
+          <iframe width="854" height="480" src="https://www.youtube.com/embed/n7RkOfN8KvE/ID_VIDEO?rel=0&autoplay=1" frameborder="0"
+            allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+      </div>
     </div>
 		<div id="catchPhrase" class="row">
   			<div class="col s12">
@@ -132,22 +199,23 @@
 		</div>
     <!-- Search Bar -->
     <div class="container">
-    <div class="row">
-      <div class="col m12 s12 valign-wrapper">
-        <div class="input-field col s9">
-          <input id="title_input" type="text" required autocomplete=off>
-          <label for="icon_prefix">Título de Película</label>
-        </div>
-        <a id="btn_buscar" class="purple waves-effect waves-light btn"> <i class="material-icons right">local_movies</i>Buscar</a>
-    <!-- <div class="row">
+      <div class="row">
+        <div class="col m12 s12 valign-wrapper">
+          <div class="input-field col s9">
+            <input id="title_input" type="text" required autocomplete=off>
+            <label for="icon_prefix">Título de Película</label>
+          </div>
+          <a id="btn_buscar" class="purple waves-effect waves-light btn">
+            <i class="material-icons right">local_movies</i>Buscar</a>
+          <!-- <div class="row">
         <div class="col m12">
           <div class="input-field">
             <input id="search" type="search" required>
             <label class="label-icon" for="search"><i class="material-icons">search</i></label>
             <i class="material-icons">close</i>
           </div> -->
+        </div>
       </div>
-    </div>
     </div>
     <!-- Resultados de Búsqueda -->
     <div class="row">
@@ -156,76 +224,113 @@
       </div>
     </div>
     <div class="container">
-        <div class="col s12 center-align">
-          <a id="movie" class="purple waves-effect waves-light btn btnTop"> <i class="material-icons left">local_movies</i>Películas</a>
-          <a id="series" class="purple waves-effect waves-light btn btnTop"> <i class="material-icons left">local_movies</i>Series</a>
-          <!-- <a id="episode" class="purple waves-effect waves-light btn btnTop"> <i class="material-icons left">local_movies</i>Episodios</a> -->
-        </div>
-        <div class="col s12 ">
-          <ul id="collection-id" class="collection">
-            <!-- <li class="collection-item avatar">
+      <div class="col s12 center-align">
+        <a id="movie" class="purple waves-effect waves-light btn btnTop">
+          <i class="material-icons left">local_movies</i>Películas</a>
+        <a id="series" class="purple waves-effect waves-light btn btnTop">
+          <i class="material-icons left">local_movies</i>Series</a>
+        <!-- <a id="episode" class="purple waves-effect waves-light btn btnTop"> <i class="material-icons left">local_movies</i>Episodios</a> -->
+      </div>
+      <div class="col s12 ">
+        <ul id="collection-id" class="collection">
+          <!-- <li class="collection-item avatar">
               <img src="images/yuna.jpg" alt="" class="circle">
               <span class="title">Title</span>
               <p>First Line <br> Second Line
               </p>
               <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
             </li> -->
-          </ul>
-        </div>
+        </ul>
+      </div>
     </div>
   </section>
   <!--PERFIL USUARIO-->
   <section class="hide" id="userProfile">
     <div class="row">
-    	<div class="col m4 hide-on-small-only ">
-    			<div class="container-fluid container-profile black white-text">
-    				<!-- Agrega imagen perfil-->
-            <img src="assets/img/img-perfil.png" style="width:40%;" class="circle  responsive-img img-profile"  alt=""><!--agrega imagen perfil-->
-    				<!-- Nombre usuario -->
-            <h6 class="colorTextProfile center flow-text" >Usuario</h6>
-    				<h5>Mi filmoteca</h5>
-    				<h6>Vistas<span class="badge purple lighten-1 white-text">4</span></h6>
-    				<h6>Por ver<span class="badge purple lighten-1 white-text">4</span></h6>
-    				<h6>Mis Listas<span class="badge purple lighten-1 white-text">4</span></h6>
-    			</div>
-    	</div>
-    	<div class="col s12 m8">
-    			<div class="container-profile-movil">
-    				<h3 class="text-profile">Perfil</h3>
-    				<h6 class="colorTextProfile">Usuario</h6>
-    			</div>
-          <button class="btn-profile">Editar Perfil</button>
-          <!--CARRUSEL PELICULAS-->
-          <div class="row">
-            <div class="col s12 ">
-              <div class="container">
-                <h4 class="text-profile">Películas vistas</h4>
-                <div class="carousel">
-                  <a class="carousel-item responsive-img " href="#one!"><img class="z-depth-5 activator coverMovies" src="assets/img/game.jpg"></a>
-                  <a class="carousel-item responsive-img " href="#two!"><img class="z-depth-5 activator coverMovies" src="assets/img/thor.jpg"></a>
-                  <a class="carousel-item responsive-img " href="#three!"><img class="z-depth-5 activator coverMovies" src="assets/img/you.jpg"></a>
-                  <a class="carousel-item responsive-img " href="#four!"><img class="z-depth-5 activator coverMovies" src="assets/img/blonde.jpg"></a>
-                </div>
-                <h4 class="text-profile">Películas por ver</h4>
-                <div class="carousel">
-                  <a class="carousel-item responsive-img " href="#one!"><img class="coverMovies" src="assets/img/malefica.jpg"></a>
-                  <a class="carousel-item responsive-img " href="#two!"><img class="coverMovies" src="assets/img/The-Lion-King.jpg"></a>
-                  <a class="carousel-item responsive-img " href="#three!"><img class="coverMovies" src="assets/img/alicia.jpeg"></a>
-                  <a class="carousel-item responsive-img " href="#four!"><img class="coverMovies" src="assets/img/amelie.jpg"></a>
-                  <a class="carousel-item responsive-img " href="#five!"><img class="coverMovies" src="assets/img/forever.jpg"></a>
-                </div>
-                <h4 class="text-profile">Mis Listas</h4>
-                <div class="carousel">
-                  <a class="carousel-item responsive-img" href="#two!"><img class="coverMovies" src="assets/img/milista2.jpg"></a>
-                  <a class="carousel-item responsive-img" href="#three!"><img class="coverMovies" src="assets/img/milista3.jpg"></a>
-                  <a class="carousel-item responsive-img" href="#four!"><img class="coverMovies" src="assets/img/milista4.jpg"></a>
-                  <a class="carousel-item responsive-img" href="#four!"><img class="coverMovies" src="assets/img/milista5jpg.jpg"></a>
-                  <a class="carousel-item responsive-img" href="#four!"><img class="coverMovies" src="assets/img/milista6.jpg"></a>
-                </div>
+      <div class="col m4 hide-on-small-only ">
+        <div class="container-fluid container-profile black white-text">
+          <!-- Agrega imagen perfil-->
+          <img src="assets/img/img-perfil.png" style="width:40%;" class="circle  responsive-img img-profile" alt="">
+          <!--agrega imagen perfil-->
+          <!-- Nombre usuario -->
+          <h6 class="colorTextProfile center flow-text">Usuario</h6>
+          <h5>Mi filmoteca</h5>
+          <h6>Vistas
+            <span class="badge purple lighten-1 white-text">4</span>
+          </h6>
+          <h6>Por ver
+            <span class="badge purple lighten-1 white-text">4</span>
+          </h6>
+          <h6>Mis Listas
+            <span class="badge purple lighten-1 white-text">4</span>
+          </h6>
+        </div>
+      </div>
+      <div class="col s12 m8">
+        <div class="container-profile-movil">
+          <h3 class="text-profile">Perfil</h3>
+          <h6 class="colorTextProfile">Usuario</h6>
+        </div>
+        <button class="btn-profile">Editar Perfil</button>
+        <!--CARRUSEL PELICULAS-->
+        <div class="row">
+          <div class="col s12 ">
+            <div class="container">
+              <h4 class="text-profile">Películas vistas</h4>
+              <div class="carousel">
+                <a class="carousel-item responsive-img " href="#one!">
+                  <img class="z-depth-5 activator coverMovies" src="assets/img/game.jpg">
+                </a>
+                <a class="carousel-item responsive-img " href="#two!">
+                  <img class="z-depth-5 activator coverMovies" src="assets/img/thor.jpg">
+                </a>
+                <a class="carousel-item responsive-img " href="#three!">
+                  <img class="z-depth-5 activator coverMovies" src="assets/img/you.jpg">
+                </a>
+                <a class="carousel-item responsive-img " href="#four!">
+                  <img class="z-depth-5 activator coverMovies" src="assets/img/blonde.jpg">
+                </a>
               </div>
-            </div> 
+              <h4 class="text-profile">Películas por ver</h4>
+              <div class="carousel">
+                <a class="carousel-item responsive-img " href="#one!">
+                  <img class="coverMovies" src="assets/img/malefica.jpg">
+                </a>
+                <a class="carousel-item responsive-img " href="#two!">
+                  <img class="coverMovies" src="assets/img/The-Lion-King.jpg">
+                </a>
+                <a class="carousel-item responsive-img " href="#three!">
+                  <img class="coverMovies" src="assets/img/alicia.jpeg">
+                </a>
+                <a class="carousel-item responsive-img " href="#four!">
+                  <img class="coverMovies" src="assets/img/amelie.jpg">
+                </a>
+                <a class="carousel-item responsive-img " href="#five!">
+                  <img class="coverMovies" src="assets/img/forever.jpg">
+                </a>
+              </div>
+              <h4 class="text-profile">Mis Listas</h4>
+              <div class="carousel">
+                <a class="carousel-item responsive-img" href="#two!">
+                  <img class="coverMovies" src="assets/img/milista2.jpg">
+                </a>
+                <a class="carousel-item responsive-img" href="#three!">
+                  <img class="coverMovies" src="assets/img/milista3.jpg">
+                </a>
+                <a class="carousel-item responsive-img" href="#four!">
+                  <img class="coverMovies" src="assets/img/milista4.jpg">
+                </a>
+                <a class="carousel-item responsive-img" href="#four!">
+                  <img class="coverMovies" src="assets/img/milista5jpg.jpg">
+                </a>
+                <a class="carousel-item responsive-img" href="#four!">
+                  <img class="coverMovies" src="assets/img/milista6.jpg">
+                </a>
+              </div>
+            </div>
           </div>
-    	</div>
+        </div>
+      </div>
     </div>
   </section>
   <footer class="page-footer black">
@@ -234,36 +339,60 @@
         <div class="col l8 offset-l2 s12">
           <div class="col l3 s4">
             <ul>
-              <li><a class="grey-text" href="#!">Media Center</a></li>
-              <li><a class="grey-text" href="#!">Privacy</a></li>
-              <li><a class="grey-text" href="#!">Movie Trailers</a></li>            
+              <li>
+                <a class="grey-text" href="#!">Media Center</a>
+              </li>
+              <li>
+                <a class="grey-text" href="#!">Privacy</a>
+              </li>
+              <li>
+                <a class="grey-text" href="#!">Movie Trailers</a>
+              </li>
             </ul>
           </div>
           <div class="col l3 s4">
             <ul>
-              <li><a class="grey-text" href="#!">Description</a></li>
-              <li><a class="grey-text" href="#!">Investor Relations</a></li>
-              <li><a class="grey-text" href="#!">Cookie Preferences</a></li>
+              <li>
+                <a class="grey-text" href="#!">Description</a>
+              </li>
+              <li>
+                <a class="grey-text" href="#!">Investor Relations</a>
+              </li>
+              <li>
+                <a class="grey-text" href="#!">Cookie Preferences</a>
+              </li>
             </ul>
           </div>
           <div class="col l3 s4">
             <ul>
-              <li><a class="grey-text" href="#!">Help Center</a></li>
-              <li><a class="grey-text" href="#!">Jobs</a></li>
-              <li><a class="grey-text" href="#!">Developers Information</a></li>
+              <li>
+                <a class="grey-text" href="#!">Help Center</a>
+              </li>
+              <li>
+                <a class="grey-text" href="#!">Jobs</a>
+              </li>
+              <li>
+                <a class="grey-text" href="#!">Developers Information</a>
+              </li>
             </ul>
           </div>
           <div class="col l3 s4">
             <ul>
-              <li><a class="grey-text" href="#!">Merchandise</a></li>
-              <li><a class="grey-text" href="#!">Terms of Use</a></li>
-              <li><a class="grey-text" href="#!">Contact Us</a></li>
+              <li>
+                <a class="grey-text" href="#!">Merchandise</a>
+              </li>
+              <li>
+                <a class="grey-text" href="#!">Terms of Use</a>
+              </li>
+              <li>
+                <a class="grey-text" href="#!">Contact Us</a>
+              </li>
             </ul>
           </div>
         </div>
       </div>
       <div id="copyright" class="footer-copyright">
-      © 2018 Top Movies
+        © 2018 Top Movies
       </div>
     </div>
   </footer>

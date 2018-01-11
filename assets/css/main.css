@@ -1,26 +1,26 @@
 * {
-	margin: 0;
-	padding: 0;
-	font-family: 'Acme', sans-serif;
+    margin: 0;
+    padding: 0;
+    font-family: 'Acme', sans-serif;
 }
 
 body {
-	background-color: #212121;
+    background-color: #212121;
 }
 
 nav {
-	height: 94px;
-	line-height: 94px;
+    height: 94px;
+    line-height: 94px;
 }
 
 .logo {
-	width: 16em;
-	margin: 1em 2em;
+    width: 16em;
+    margin: 1em 2em;
 }
 
 .txt {
-	font-size: 1.5em;
-	color:#858d99;
+    font-size: 1.5em;
+    color: #858d99;
 }
 
 a:hover {
@@ -28,77 +28,91 @@ a:hover {
 }
 
 .box-input {
-	box-sizing: inherit;
-	border-radius: 0.5em;
+    box-sizing: inherit;
+    border-radius: 0.5em;
 }
 
 .txt-1 {
-	color: #fff;
+    color: #fff;
 }
 
 .txt-2 {
-	color: #fff;
+    color: #fff;
 }
+
 
 /* Navegador */
+
 .text-nav {
-	color: #bdbdbd;
+    color: #bdbdbd;
 }
 
+
 /* Modal Sign In */
+
 .modalTxt {
-	padding-top: 0.5em;
+    padding-top: 0.5em;
 }
 
 .fa {
-	color: #9c27b0;
-	padding: 1em 0.8em;
+    color: #9c27b0;
+    padding: 1em 0.8em;
 }
+
 
 /* Modal Sign Up */
+
 #success {
-	font-weight: 600;
-	font-size: 2em; 
+    font-weight: 600;
+    font-size: 2em;
 }
 
+
 /* Perfil usuario */
+
 .colorTextProfile {
-	color: #ab47bc;
+    color: #ab47bc;
 }
 
 .container-profile {
-	border: 1px solid black;
-	padding: 7%;
-	background-color: #FFFFFF;
+    border: 1px solid black;
+    padding: 7%;
+    background-color: #FFFFFF;
 }
 
 .img-profile {
-	margin-left: 29%;
+    margin-left: 29%;
 }
 
 .container-profile-movil {
-	border-bottom: 1px solid black;
+    border-bottom: 1px solid black;
 }
 
 .btn-profile {
-	background-color: black;
-	border-radius: 15px;
-	color: #fff;
+    background-color: black;
+    border-radius: 15px;
+    color: #fff;
 }
 
 .text-profile {
-	color: #fff;
+    color: #fff;
 }
 
 #copyright {
-	margin-left: 15.6em;
+    margin-left: 15.6em;
 }
 
+
 /* Video cover */
+
 .coverMovies {
-	border: 6px solid white;
+    border: 6px solid white;
 }
 
 .carousel {
-	margin-top: 0;
+    margin-top: 0;
+}
+
+.colorViews {
+    color: #000;
 }

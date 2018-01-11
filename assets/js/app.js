@@ -148,10 +148,10 @@ $(document).ready(function () {
           .text(element);
 
         var groupButton = $('<div></div>')
-          .addClass("horizontal right");
-        groupButton.html('<a class="btn-floating red"><i class="material-icons">add_circle_outline</i></a> \
-      <a class="btn-floating yellow darken-1"><i class="material-icons">access_time</i></a> \
-      <a class="btn-floating green"><i class="material-icons">check</i></a>');
+          .addClass('horizontal right');
+        groupButton.html('<a class="btn-floating red btnMylist"><i class="material-icons">add_circle_outline</i></a> \
+          <a class="btn-floating yellow darken-1 btnPending"><i class="material-icons">access_time</i></a> \
+          <a class="btn-floating green btnViewed"><i class="material-icons">check</i></a>');
 
         var collectionitem = $('<li></li>')
           .addClass('collection-item avatar')
@@ -208,4 +208,37 @@ $(document).ready(function () {
     };
   });
 
+  $(document).on('click', '.btnMylist', function () {
+    // Your Code
+    var searchMylist = ($(this).parent().parent().find('.title').text());
+    var urlMylist = 'http://www.omdbapi.com/?apikey=942bd4df&t=' + searchMylist;
+
+    var request = new XMLHttpRequest();
+    request.open('GET', urlMylist);
+    request.responseType = 'json';
+    request.send();
+
+    request.onload = function () {
+      var infoTitle = request.response;
+      console.log(infoTitle);
+      var PosterModal = infoTitle.Poster;
+      var titleModal = infoTitle.Title;
+      var yearModal = infoTitle.Year;
+      var actorsModal = infoTitle.Actors;
+      var directorModal = infoTitle.Director;
+      var plotModal = infoTitle.Plot;
+      // console.log(PosterModal, titleModal, yearModal, actorsModal, directorModal, plotModal);
+      var newName = $('.contentModalMylist')
+        .append(titleModal);
+    };
+  });
+
+  $(document).on('click', '.btnPending', function () {
+    // Your Code
+    var searchPending = ($(this).parent().parent().find('.title').text());
+  });
+  $(document).on('click', '.btnViewed', function () {
+    // Your Code
+    var searchViewed = ($(this).parent().parent().find('.title').text());
+  });
 });
