@@ -16,7 +16,7 @@
   			<img src="assets/img/Popcorn (2).png" alt="" class="logo">
   			<ul class="right hide-on-med-and-down">
     			<li><a class="text-nav" id="btnHome">Home</a></li>
-          <li><a class="waves-effect waves-light btn purple modal-trigger" href="#modal1">INGRESAR</a></li>
+          <li><a id="logInBtn" class="waves-effect waves-light btn purple modal-trigger" href="#modal1">INGRESAR</a></li>
     			<!-- Dropdown Trigger -->
     			<li><a id="btnProfileUser"	class="dropdown-button text-nav" href="#!" data-activates="dropdown1">Perfil </a></li>
   			</ul>
@@ -48,7 +48,7 @@
             <div class="row">
               <div class="col s12 center">
                 <p class="modalTxt">O ingresa con tus redes sociales:</p>
-                <a id="googleBtn"><i class="fa fa-google fa-2x" aria-hidden="true"></i></a>
+                <a id="googleBtn" onclick="google()"><i class="fa fa-google fa-2x" aria-hidden="true"></i></a>
                 <a id="facebookBtn"><i class="fa fa-facebook-official fa-2x" aria-hidden="true"></i></a>
                 <p>No tienes una cuenta? <a id="register" class="modal-action modal-close modal-trigger" href="#modal2">Regístrate!</a> Olvidaste tu contraseña? <a href="#">Recupérala!</a></p>                
               </div>
@@ -115,14 +115,14 @@
   <!-- VISTA PRINCIPAL -->
 	<section id="home">
 		<!-- Video cover -->
-    <div class="row">
+    <div id="videoCover" class="row">
         <div class="col s12 ">
           <div class="video-container">
             <iframe width="854" height="480" src="https://www.youtube.com/embed/n7RkOfN8KvE" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
           </div>
         </div>
     </div>
-		<div class="row">
+		<div id="catchPhrase" class="row">
   			<div class="col s12">
     			<div class="img-fondo">
     				<h1 class="txt-1 center">Explora y organiza las películas y series que quieres ver!</h1>
