@@ -1,17 +1,11 @@
 
-$(document).ready( function (){
-
-var instance = M.Carousel.init({
-    fullWidth: true
-  });
-
-  // Or with jQuery
-
-  $('.carousel.carousel-slider').carousel({
-    fullWidth: true
-  });
+ $(document).ready(function(){
+      $('.carousel').carousel(); /*funcion carrusel */
+      Materialize.scrollFire(options); 
   
-});
+  
+}); 
+  
 
 //Cambio de vistas
 $('#btnProfileUser').click(function(){
@@ -21,7 +15,15 @@ $('#btnProfileUser').click(function(){
 }); 
 
 $('#btnHome').click(function(){
+
    $('#home').removeClass("hide");
    $('footer').removeClass("hide");
    $('#userProfile').addClass("hide");
 }); 
+
+
+
+
+    
+
+

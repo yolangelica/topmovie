@@ -66,6 +66,17 @@ color:#ab47bc ;
 .text-profile{
 	color:#fff;
 }
+<<<<<<< HEAD
 #copyright{
 	margin-left: 15.6em;
+=======
+
+/**/
+.coverMovies{
+	border: 6px solid white;
+}
+
+.carousel{
+	margin-top: 0;
+>>>>>>> agrega 3 carrusel a perfil usuario
 }
