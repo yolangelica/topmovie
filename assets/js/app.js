@@ -10,7 +10,7 @@ var newPassword = $('#newPassword').val();
 
 function signUp() {
   firebase.auth().createUserWithEmailAndPassword(newEmail, newPassword)
-    .catch(function (error) {
+    .catch(function(error) {
       // Handle Errors here.
       var errorCode = error.code;
       var errorMessage = error.message;
@@ -68,13 +68,13 @@ watcher();
 var provider = new firebase.auth.GoogleAuthProvider();
 
 function google() {
-  firebase.auth().signInWithPopup(provider).then(function (result) {
+  firebase.auth().signInWithPopup(provider).then(function(result) {
     // This gives you a Google Access Token. You can use it to access the Google API.
     var token = result.credential.accessToken;
     // The signed-in user info.
     var user = result.user;
     // ...
-  }).catch(function (error) {
+  }).catch(function(error) {
     // Handle Errors here.
     var errorCode = error.code;
     var errorMessage = error.message;
@@ -89,7 +89,7 @@ function google() {
 /* ========== FIN AUTENTICACION FIREBASE =========== */
 
 
-$(document).ready(function () {
+$(document).ready(function() {
 
   // Inicializa plugins de Materialize
   $('.modal').modal();
@@ -98,26 +98,27 @@ $(document).ready(function () {
   $('ul.tabs').tabs();
 
   //Cambio de vistas
-  $('#btnProfileUser').click(function () {
+  $('#btnProfileUser').click(function() {
     $('#home').addClass("hide");
     $('footer').addClass("hide");
     $('#userProfile').removeClass("hide");
     $('#myList').addClass("hide");
   });
 
-  $('#btnHome').click(function () {
+  $('#btnHome').click(function() {
     $('#home').removeClass("hide");
     $('footer').removeClass("hide");
     $('#userProfile').addClass("hide");
     $('#myList').addClass("hide");
   });
 
-  $('#btnMylist').click(function () {
+  $('#btnMylist').click(function() {
     $('#home').addClass("hide");
     $('footer').addClass("hide");
     $('#userProfile').addClass("hide");
     $('#myList').removeClass("hide");
   })
+
 
   /* ====== FUNCIONES DE BÚSQUEDA ====== */
   
@@ -176,7 +177,7 @@ $(document).ready(function () {
     };
   });
 
-  $('#btn_buscar').click(function () {
+  $('#btn_buscar').click(function() {
     console.log($('#title_input').val());
     var url = 'http://www.omdbapi.com/?apikey=942bd4df&s=' + $('#title_input').val();
     var request = new XMLHttpRequest();
@@ -222,7 +223,7 @@ $(document).ready(function () {
     };
   });
 
-  $(document).on('click', '.btnMylist', function () {
+  $(document).on('click', '.btnMylist', function() {
     // Your Code
     var searchMylist = ($(this).parent().parent().find('.title').text());
     var urlMylist = 'http://www.omdbapi.com/?apikey=942bd4df&s=' + searchMylist;
@@ -231,7 +232,7 @@ $(document).ready(function () {
     request.open('GET', urlMylist);
     request.responseType = 'json';
     request.send();
-    request.onload = function () {
+    request.onload = function() {
       var infoTitle = request.response;
       console.log(infoTitle);
       var PosterModal = infoTitle.Poster;
@@ -246,7 +247,7 @@ $(document).ready(function () {
     };
   });
 
-  $(document).on('click', '.btnPending', function () {
+  $(document).on('click', '.btnPending', function() {
     // Your Code
     var searchPending = ($(this).parent().parent().find('.title').text());
     var urlPending = 'http://www.omdbapi.com/?apikey=942bd4df&t=' + searchPending;
@@ -254,7 +255,7 @@ $(document).ready(function () {
     request.open('GET', urlPending);
     request.responseType = 'json';
     request.send();
-    request.onload = function () {
+    request.onload = function() {
       var infoTitlePending = request.response;
       console.log(infoTitlePending);
       var PosterModalPending = infoTitlePending.Poster;
@@ -267,9 +268,8 @@ $(document).ready(function () {
       var newName = $('.modalPending')
         .append(titleModalPending);
     };
-
   });
-  $(document).on('click', '.btnViewed', function () {
+  $(document).on('click', '.btnViewed', function() {
     // Your Code
     var searchViewed = ($(this).parent().parent().find('.title').text());
     var urlViewed = 'http://www.omdbapi.com/?apikey=942bd4df&t=' + searchViewed;
@@ -277,7 +277,7 @@ $(document).ready(function () {
     request.open('GET', urlViewed);
     request.responseType = 'json';
     request.send();
-    request.onload = function () {
+    request.onload = function() {
       var infoTitleViewed = request.response;
       console.log(infoTitleViewed);
       var PosterModalViewed = infoTitleViewed.Poster;
@@ -291,5 +291,123 @@ $(document).ready(function () {
         .append(titleModalViewed);
     };
   });
-
 });
+
+//Carrusel Netflix
+
+var scaling = 1.50;
+//count
+var currentSliderCount = 0;
+var videoCount = $(".slider-container").children().length;
+var showCount = 4;
+var sliderCount = videoCount / showCount;
+var controlsWidth = 40;
+var scollWidth = 0;
+
+$(document).ready(function () {
+    //$('.slider-container .slide:nth-last-child(-n+4)').prependTo('.slider-container');
+    init();
+    
+});
+$(window).resize(function () {
+    init();
+});
+function init(){
+    // elements
+    var win = $(window);
+    var sliderFrame = $(".slider-frame");
+    var sliderContainer = $(".slider-container");
+    var slide = $(".slide");
+    
+    //counts
+    var scollWidth = 0;
+ 
+    
+    //sizes
+    var windowWidth = win.width();
+    var frameWidth = win.width() - 80;
+     if(windowWidth >= 0 && windowWidth <= 414){
+       showCount = 2;
+   }else if(windowWidth >= 414 &&  windowWidth <= 768){
+       showCount = 3;
+   }else{
+       showCount = 4;
+   }
+    var videoWidth = ((windowWidth - controlsWidth * 2) / showCount );
+    var videoHeight = Math.round(videoWidth / (16/9));
+    
+    var videoWidthDiff = (videoWidth * scaling) - videoWidth;
+    var videoHeightDiff = (videoHeight * scaling) - videoHeight;
+    
+  
+    
+    //set sizes
+    sliderFrame.width(windowWidth);
+    sliderFrame.height(videoHeight * scaling);
+    
+    
+    //sliderFrame.css("top", (videoHeightDiff / 2));
+    
+    sliderContainer.height(videoHeight * scaling);
+    sliderContainer.width((videoWidth * videoCount) + videoWidthDiff);
+    sliderContainer.css("top", (videoHeightDiff / 2));
+    sliderContainer.css("margin-left", (controlsWidth));
+    
+    slide.height(videoHeight);
+    slide.width(videoWidth);
+    
+    //hover effect
+    $(".slide").mouseover(function() {
+        $(this).css("width", videoWidth * scaling);
+        $(this).css("height", videoHeight * scaling);
+        $(this).css("top", -(videoHeightDiff / 2));
+        if($(".slide").index($(this)) == 0 || ($(".slide").index($(this))) % 4 == 0){
+          // do nothing
+        }
+        else if(($(".slide").index($(this)) + 1) % 4 == 0 && $(".slide").index($(this)) != 0){
+            $(this).parent().css("margin-left", -(videoWidthDiff - controlsWidth));
+        }
+        else{
+            $(this).parent().css("margin-left", - (videoWidthDiff / 2));
+        }
+    }).mouseout(function() {
+        $(this).css("width", videoWidth * 1);
+        $(this).css("height", videoHeight * 1);
+        $(this).css("top", 0);
+        $(this).parent().css("margin-left", controlsWidth);
+    });
+    
+    // controls
+    controls(frameWidth, scollWidth);
+}
+function controls(frameWidth, scollWidth){
+    var prev = $(".prev");
+    var next = $(".next");
+    
+    next.on("click", function(){
+        console.log(currentSliderCount);
+        console.log(sliderCount);
+        scollWidth = scollWidth + frameWidth;
+        $('.slider-container').animate({
+            left: - scollWidth
+        }, 300, function(){ 
+            if(currentSliderCount >= sliderCount-1){
+                $(".slider-container").css("left", 0);
+                currentSliderCount = 0;
+                scollWidth = 0;
+            }else{
+                currentSliderCount++;
+            }
+        });        
+    });
+    prev.on("click", function(){
+        scollWidth = scollWidth - frameWidth;
+        $('.slider-container').animate({
+            left: + scollWidth
+        }, 300, function(){ 
+            currentSliderCount--;
+        });
+        //$(".slider-container").css("left", scollWidth);
+    });
+};
+
