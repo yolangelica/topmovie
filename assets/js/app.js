@@ -36,7 +36,7 @@ $('.btnTop').click(function() {
         console.log(movies.Search);
         //Busqueda por año. Todas las peliculas del año que introduce el usuario que contengan la letra a
         var listAllMovies = $('#collection-id');
-        listAllMovies.innerHTML = '';
+        listAllMovies.html("");
         for (let i = 0; i < movies.Search.length; i++) {
             const element = movies.Search[i].Title;
             const element2 = movies.Search[i].Poster;
@@ -82,7 +82,7 @@ $('#btn_buscar').click(function() {
 
 
         var listatitulos = $('#listatitulos');
-        listatitulos.innerHTML = '';
+        listatitulos.html("");
 
         var element = titulo.Title;
         var element2 = titulo.Poster;
