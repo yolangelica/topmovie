@@ -56,7 +56,7 @@ function watcher() {
       // User is signed out.
       $('#videoCover').show();
       $('#catchPhrase').show();
-      $('#btnProfileUser').hide();
+      //$('#btnProfileUser').hide();
       $('#logInBtn').show();
       console.log('No hay usuario activo!');
     }
@@ -102,13 +102,22 @@ $(document).ready(function () {
     $('#home').addClass("hide");
     $('footer').addClass("hide");
     $('#userProfile').removeClass("hide");
+    $('#myList').addClass("hide");
   });
 
   $('#btnHome').click(function () {
     $('#home').removeClass("hide");
     $('footer').removeClass("hide");
     $('#userProfile').addClass("hide");
+    $('#myList').addClass("hide");
   });
+
+  $('#btnMylist').click(function () {
+    $('#home').addClass("hide");
+    $('footer').addClass("hide");
+    $('#userProfile').addClass("hide");
+    $('#myList').removeClass("hide");
+  })
 
   // Funciones de búsqueda:
   $('.btnTop').click(function () {
