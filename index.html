@@ -23,11 +23,11 @@
 			</div> 
 		</nav>
     <!-- SIGN IN Modal Structure -->
-    <div id="modal1" class="modal">
+    <div id="modal1" class="modal modal-fixed-footer">
       <div class="modal-content">
         <div class="row">
           <form class="col s12">
-            <h4 class="center">Ingresa a tu cuenta</h4>
+            <h5 class="center">Ingresa a tu cuenta</h5>
             <div class="row">
               <div class="input-field inline col s6 offset-s3">
                 <input id="email" type="email" class="validate">
@@ -42,15 +42,15 @@
             </div>
             <div class="row">
               <div class="col s6 offset-s3 center">
-                <a class="waves-effect waves-light btn purple" onclick="signIn()">Entrar</a>  
+                <a class="waves-effect waves-light btn purple modal-action modal-close" onclick="signIn()">Entrar</a>  
               </div>
             </div>
             <div class="row">
-              <div class="col s6 offset-s3 center">
+              <div class="col s12 center">
                 <p class="modalTxt">O ingresa con tus redes sociales:</p>
                 <a id="googleBtn"><i class="fa fa-google fa-2x" aria-hidden="true"></i></a>
                 <a id="facebookBtn"><i class="fa fa-facebook-official fa-2x" aria-hidden="true"></i></a>
-                <p>No tienes una cuenta? <a href="#modal2">Regístrate!</a></p>                
+                <p>No tienes una cuenta? <a id="register" class="modal-action modal-close modal-trigger" href="#modal2">Regístrate!</a> Olvidaste tu contraseña? <a href="#">Recupérala!</a></p>                
               </div>
             </div>
           </form>
@@ -61,11 +61,11 @@
       </div>
     </div> <!-- fin Modal -->
     <!-- SIGN UP Modal Structure -->
-    <div id="modal2" class="modal">
+    <div id="modal2" class="modal modal-fixed-footer">
       <div class="modal-content">
         <div class="row">
           <form class="col s12">
-            <h4 class="center">Regístrate</h4>
+            <h5 class="center">Regístrate</h5>
             <div class="row">
               <div class="input-field inline col s6">
                 <input id="newUserName" type="text" class="validate">
@@ -87,9 +87,12 @@
               </div>
             </div>
             <div class="row">
-              <div class="input-field inline col s6 offset-s3 center">
+              <div class="input-field inline col s6">
                 <input id="newEmail" type="email" class="validate">
                 <label for="newEmail">Email</label>
+              </div>
+              <div class="col s6 center purple-text" id="success">
+                <!-- Mensaje Registro exitoso -->
               </div>
             <div class="row">
               <div class="col s6 offset-s3 center">
@@ -98,7 +101,7 @@
             </div>
             <div class="row">
               <div class="col s6 offset-s3 center">
-                <p>Ya tienes una cuenta? <a href="#modal1">Inicia sesión!</a></p>               
+                <p>Ya tienes una cuenta? <a class="modal-action modal-close modal-trigger" href="#modal1">Inicia sesión!</a></p>               
               </div>
             </div>
           </form>

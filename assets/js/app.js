@@ -8,6 +8,9 @@ var newPassword = $('#newPassword').val();
 function signUp() {
   firebase.auth().createUserWithEmailAndPassword(newEmail, newPassword).catch(function (error) {
     console.log('Registro exitoso!');
+    $('#success').append(
+      "<p>Registro exitoso!</p>"
+      );
     // Handle Errors here.
     var errorCode = error.code;
     var errorMessage = error.message;

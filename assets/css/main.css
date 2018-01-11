@@ -56,6 +56,12 @@ a:hover {
 	padding: 1em 0.8em;
 }
 
+/* Modal Sign Up */
+#success {
+	font-weight: 600;
+	font-size: 2em; 
+}
+
 /* Perfil usuario */
 .colorTextProfile {
 	color: #ab47bc;
