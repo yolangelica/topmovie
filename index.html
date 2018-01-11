@@ -6,37 +6,36 @@
 	<title>Movie top</title>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-alpha.3/css/materialize.min.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-      <!--Import materialize.css-->
   <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
 	<link rel="stylesheet" href="assets/css/main.css">
 </head>
 <body>
 	<header>
 		<!--navbar-->
-			<!-- Dropdown Structure -->
-			<nav>
-  			<div class="nav-wrapper black lighten-2">
-    			<img src="assets/img/Popcorn (1).png" alt="" class="logo responsive-img">
-    			<ul class="right hide-on-med-and-down">
-      			<li><a  class="text-nav" id="btnHome">Home</a></li>
-      			
-      			<!-- Dropdown Trigger -->
-      			<li><a id="btnProfileUser"	class="dropdown-button text-nav" href="#!" data-activates="dropdown1">Perfil </a></li>
-    			</ul>
-  			</div>
-			</nav>
+		<nav>
+			<div class="nav-wrapper black lighten-2">
+  			<img src="assets/img/Popcorn (2).png" alt="" class="logo">
+  			<ul class="right hide-on-med-and-down">
+    			<li><a class="text-nav" id="btnHome">Home</a></li>
+    			<!-- Dropdown Trigger -->
+    			<li><a id="btnProfileUser"	class="dropdown-button text-nav" href="#!" data-activates="dropdown1">Perfil </a></li>
+  			</ul>
+			</div> 
+		</nav>
 	</header>
-	<section id="home">
-		<div class="container"><!--input busqueda-->
-			<div class="row">
-				<div class="col m12">
-					<div class="input-field">
-      			<input id="search" type="search" required>
-         		<label class="label-icon" for="search"><i class="material-icons">search</i></label>
-         		<i class="material-icons">close</i>
-       		</div>
-				</div>
-			</div>
+  <div class="container">
+    <!--input busqueda-->
+    <div class="row">
+        <div class="col m12">
+          <div class="input-field">
+            <input id="search" type="search" required>
+            <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+            <i class="material-icons">close</i>
+          </div>
+        </div>
+      </div>
+  <!--VISTA PRINCIPAL-->
+	  <section id="home">
 			<div class="row"><!--IMAGEN PRINCIPAL *cambiar por video-->
 				<div class="col s12 carousel">
  					<div class="carousel carousel-slider">
@@ -55,46 +54,75 @@
   				</div>
   			</div>
 			</div>
-		</div><!--close container home-->
-	</section>
-
+    </section>
 	<!--PERFIL USUARIO-->
-	<section class="container hide" id="userProfile">
-		<div class="row">
-			<div class="col m4 hide-on-small-only ">
-				<div class="container-fluid container-profile">
-					<img src="assets/img/img-perfil.png" style="width:40%;" class="circle  responsive-img img-profile "  alt=""><!--agrega imagen perfil-->
-					<h6 class="colorTextProfile center-align" >nombre usuario</h6><!--nombre usuario-->
-					<h5>Mis peliculas</h5>
-					<h6>vistas</h6>
-					<h6>Pendientes</h6>
-					<h6>Mis Listas</h6>
-					<h6>Editar perfil</h6>
-				</div>
-			</div>
-			<div class="col s12 m8">
-				<div class="container-profile-movil">
-					<h3 class="text-profile">Perfil</h3>
-					<h6 class="colorTextProfile">nombre usuario</h6>
-				</div>
-				<h4 class="text-profile">Peliculas vistas</h4>
-				<div class="row"><!--se guardaran imagenes peliculas vistas-->
-					<div class="col s6 m3">
-						<img src="" alt="">
-					</div>
-				</div>
-				<h4 class="text-profile">Peliculas por ver</h4>
-				<h4 class="text-profile">Mis Listas</h4>
-				<button class="btn-profile">Editar Perfil</button>
-			</div>
-		</div>
-	</section>
-
-<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-<script src="assets/js/app.js"></script>
-
-
+    <section class="hide" id="userProfile">
+    	<div class="row">
+    		<div class="col m4 hide-on-small-only ">
+    			<div class="container-fluid container-profile black white-text">
+    				<img src="assets/img/img-perfil.png" style="width:40%;" class="circle  responsive-img img-profile"  alt=""><!--agrega imagen perfil-->
+    				<h6 class="colorTextProfile center flow-text" >Usuario</h6><!--nombre usuario-->
+    				<h5>Mi filmoteca</h5>
+    				<h6>Vistas<span class="badge purple lighten-1 white-text">4</span></h6>
+    				<h6>Por ver<span class="badge purple lighten-1 white-text">4</span></h6>
+    				<h6>Mis Listas<span class="badge purple lighten-1 white-text">4</span></h6>
+    			</div>
+    		</div>
+    		<div class="col s12 m8">
+    			<div class="container-profile-movil">
+    				<h3 class="text-profile">Perfil</h3>
+    				<h6 class="colorTextProfile">Usuario</h6>
+    			</div>
+    			<h4 class="text-profile">Peliculas vistas</h4>
+    			<h4 class="text-profile">Peliculas por ver</h4>
+    			<h4 class="text-profile">Mis Listas</h4>
+    			<button class="btn-profile">Editar Perfil</button>
+    		</div>
+    	</div>
+    </section>
+  </div><!--close container-->
+  <footer class="page-footer black">
+    <div class="container">
+      <div class="row">
+        <div class="col l8 offset-l2 s12">
+          <div class="col l3 s4">
+            <ul>
+              <li><a class="grey-text" href="#!">Media Center</a></li>
+              <li><a class="grey-text" href="#!">Privacy</a></li>
+              <li><a class="grey-text" href="#!">Movie Trailers</a></li>            
+            </ul>
+          </div>
+          <div class="col l3 s4">
+            <ul>
+              <li><a class="grey-text" href="#!">Description</a></li>
+              <li><a class="grey-text" href="#!">Investor Relations</a></li>
+              <li><a class="grey-text" href="#!">Cookie Preferences</a></li>
+            </ul>
+          </div>
+          <div class="col l3 s4">
+            <ul>
+              <li><a class="grey-text" href="#!">Help Center</a></li>
+              <li><a class="grey-text" href="#!">Jobs</a></li>
+              <li><a class="grey-text" href="#!">Developers Information</a></li>
+            </ul>
+          </div>
+          <div class="col l3 s4">
+            <ul>
+              <li><a class="grey-text" href="#!">Merchandise</a></li>
+              <li><a class="grey-text" href="#!">Terms of Use</a></li>
+              <li><a class="grey-text" href="#!">Contact Us</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div id="copyright" class="footer-copyright">
+      © 2018 Top Movies
+      </div>
+    </div>
+  </footer>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+  <script src="assets/js/app.js"></script>
 </body>
 </html>
 

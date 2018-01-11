@@ -1,7 +1,5 @@
 
 $(document).ready( function (){
-	$(".dropdown-button").dropdown();
-
 
 var instance = M.Carousel.init({
     fullWidth: true
@@ -15,15 +13,15 @@ var instance = M.Carousel.init({
   
 });
 
-
-
-//aparece pagina perfil usuario
+//Cambio de vistas
 $('#btnProfileUser').click(function(){
-         $('#home').addClass("hide");
-         $('#userProfile').removeClass("hide");
-     }); 
-//aparece pagina home
+   $('#home').addClass("hide");
+   $('footer').addClass("hide");
+   $('#userProfile').removeClass("hide");
+}); 
+
 $('#btnHome').click(function(){
-	$('#userProfile').addClass("hide");
-	$('#home').removeClass("hide");
-})
+   $('#home').removeClass("hide");
+   $('footer').removeClass("hide");
+   $('#userProfile').addClass("hide");
+}); 

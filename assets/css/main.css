@@ -6,10 +6,13 @@
 body{
 	background-color: #212121;
 }
-
+nav{
+	height: 94px;
+	line-height: 94px;
+}
 .logo{
-	width: 3em;
-	margin-left: 2em;
+	width: 16em;
+	margin: 1em 2em;
 }
 
 .txt{
@@ -62,4 +65,7 @@ color:#ab47bc ;
 }
 .text-profile{
 	color:#fff;
+}
+#copyright{
+	margin-left: 15.6em;
 }
