@@ -95,7 +95,7 @@ $(document).ready(function () {
   $('.modal').modal();
   $('.dropdown-button').dropdown();
   $('.carousel').carousel();
-  //Materialize.scrollFire(options);
+  $('ul.tabs').tabs();
 
   //Cambio de vistas
   $('#btnProfileUser').click(function () {
@@ -119,7 +119,11 @@ $(document).ready(function () {
     $('#myList').removeClass("hide");
   })
 
-  // Funciones de búsqueda:
+  /* ====== FUNCIONES DE BÚSQUEDA ====== */
+  
+  // Tabs:
+  $('ul.tabs').tabs('select_tab', '#test2');
+
   $('.btnTop').click(function () {
     var yearValue = 2009;
     console.log(yearValue);
@@ -134,6 +138,7 @@ $(document).ready(function () {
       var movies = request.response;
       console.log(movies);
       console.log(movies.Search);
+      
       //Busqueda por año. Todas las peliculas del año que introduce el usuario que contengan la letra a
       var listAllMovies = $('#collection-id');
       listAllMovies.html("");
@@ -173,7 +178,7 @@ $(document).ready(function () {
 
   $('#btn_buscar').click(function () {
     console.log($('#title_input').val());
-    var url = 'http://www.omdbapi.com/?apikey=942bd4df&t=' + $('#title_input').val();
+    var url = 'http://www.omdbapi.com/?apikey=942bd4df&s=' + $('#title_input').val();
     var request = new XMLHttpRequest();
     request.open('GET', url);
     request.responseType = 'json';
@@ -220,7 +225,7 @@ $(document).ready(function () {
   $(document).on('click', '.btnMylist', function () {
     // Your Code
     var searchMylist = ($(this).parent().parent().find('.title').text());
-    var urlMylist = 'http://www.omdbapi.com/?apikey=942bd4df&t=' + searchMylist;
+    var urlMylist = 'http://www.omdbapi.com/?apikey=942bd4df&s=' + searchMylist;
 
     var request = new XMLHttpRequest();
     request.open('GET', urlMylist);
@@ -286,4 +291,5 @@ $(document).ready(function () {
         .append(titleModalViewed);
     };
   });
+
 });
