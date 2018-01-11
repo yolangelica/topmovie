@@ -10,12 +10,12 @@ var newPassword = $('#newPassword').val();
 
 function signUp() {
   firebase.auth().createUserWithEmailAndPassword(newEmail, newPassword)
-  .catch(function (error) {
-    // Handle Errors here.
-    var errorCode = error.code;
-    var errorMessage = error.message;
-    // ...
-  });
+    .catch(function (error) {
+      // Handle Errors here.
+      var errorCode = error.code;
+      var errorMessage = error.message;
+      // ...
+    });
 }
 
 // SIGN IN:
@@ -24,13 +24,13 @@ var password = $('#password').val();
 
 function signIn() {
   firebase.auth().signInWithEmailAndPassword(email, password)
-  .catch(function (error) {
-    console.log('Ingreso exitoso!');
-    // Handle Errors here.
-    var errorCode = error.code;
-    var errorMessage = error.message;
-    // ...
-  });
+    .catch(function (error) {
+      console.log('Ingreso exitoso!');
+      // Handle Errors here.
+      var errorCode = error.code;
+      var errorMessage = error.message;
+      // ...
+    });
 }
 
 // OBSERVADOR DE ESTADO:
@@ -42,7 +42,7 @@ function watcher() {
       console.log(user);
       $('#videoCover').hide();
       $('#catchPhrase').hide();
-       $('#btnProfileUser').show();
+      $('#btnProfileUser').show();
       $('#logInBtn').hide();
       var displayName = user.displayName;
       var email = user.email;
@@ -68,13 +68,13 @@ watcher();
 var provider = new firebase.auth.GoogleAuthProvider();
 
 function google() {
-  firebase.auth().signInWithPopup(provider).then(function(result) {
-  // This gives you a Google Access Token. You can use it to access the Google API.
-  var token = result.credential.accessToken;
-  // The signed-in user info.
-  var user = result.user;
-  // ...
-  }).catch(function(error) {
+  firebase.auth().signInWithPopup(provider).then(function (result) {
+    // This gives you a Google Access Token. You can use it to access the Google API.
+    var token = result.credential.accessToken;
+    // The signed-in user info.
+    var user = result.user;
+    // ...
+  }).catch(function (error) {
     // Handle Errors here.
     var errorCode = error.code;
     var errorMessage = error.message;
@@ -217,7 +217,6 @@ $(document).ready(function () {
     request.open('GET', urlMylist);
     request.responseType = 'json';
     request.send();
-
     request.onload = function () {
       var infoTitle = request.response;
       console.log(infoTitle);
@@ -236,9 +235,46 @@ $(document).ready(function () {
   $(document).on('click', '.btnPending', function () {
     // Your Code
     var searchPending = ($(this).parent().parent().find('.title').text());
+    var urlPending = 'http://www.omdbapi.com/?apikey=942bd4df&t=' + searchPending;
+    var request = new XMLHttpRequest();
+    request.open('GET', urlPending);
+    request.responseType = 'json';
+    request.send();
+    request.onload = function () {
+      var infoTitlePending = request.response;
+      console.log(infoTitlePending);
+      var PosterModalPending = infoTitlePending.Poster;
+      var titleModalPending = infoTitlePending.Title;
+      var yearModalPending = infoTitlePending.Year;
+      var actorsModalPending = infoTitlePending.Actors;
+      var directorModalPending = infoTitlePending.Director;
+      var plotModalPending = infoTitlePending.Plot;
+      // console.log(PosterModal, titleModal, yearModal, actorsModal, directorModal, plotModal);
+      var newName = $('.contentModalPending')
+        .append(titleModalPending);
+    };
+
   });
   $(document).on('click', '.btnViewed', function () {
     // Your Code
     var searchViewed = ($(this).parent().parent().find('.title').text());
+    var urlViewed = 'http://www.omdbapi.com/?apikey=942bd4df&t=' + searchViewed;
+    var request = new XMLHttpRequest();
+    request.open('GET', urlViewed);
+    request.responseType = 'json';
+    request.send();
+    request.onload = function () {
+      var infoTitleViewed = request.response;
+      console.log(infoTitleViewed);
+      var PosterModalViewed = infoTitleViewed.Poster;
+      var titleModalViewed = infoTitleViewed.Title;
+      var yearModalViewed = infoTitleViewed.Year;
+      var actorsModalViewed = infoTitleViewed.Actors;
+      var directorModalViewed = infoTitleViewed.Director;
+      var plotModalViewed = infoTitleViewed.Plot;
+      // console.log(PosterModal, titleModal, yearModal, actorsModal, directorModal, plotModal);
+      var newName = $('.contentModalViewed')
+        .append(titleModalViewed);
+    };
   });
 });
