@@ -1,26 +1,79 @@
+// SIGN UP:
+var newName = $('#newName').val();
+var newLastName = $('#newLastName').val();
+var newUserName = $('#newUserName').val();
+var newEmail = $('#newEmail').val();
+var newPassword = $('#newPassword').val();
+
+function signUp() {
+  firebase.auth().createUserWithEmailAndPassword(newEmail, newPassword).catch(function(error) {
+    console.log('Registro exitoso!');
+    // Handle Errors here.
+    var errorCode = error.code;
+    var errorMessage = error.message;
+    // ...
+  });
+}
+
+// SIGN IN:
+var email = $('#email').val();
+var password = $('#password').val();
+
+function signIn() {
+  firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
+   console.log('Ingreso exitoso!');
+   watcher();
+   // Handle Errors here.
+   var errorCode = error.code;
+   var errorMessage = error.message;
+   // ...
+  });
+}
+
+// OBSERVADOR DE ESTADO:
+function watcher() {
+  firebase.auth().onAuthStateChanged(function(user) {
+    if (user) {
+      // User is signed in.
+      var displayName = user.displayName;
+      var email = user.email;
+      var emailVerified = user.emailVerified;
+      var photoURL = user.photoURL;
+      var isAnonymous = user.isAnonymous;
+      var uid = user.uid;
+      var providerData = user.providerData;
+      // ...
+    } else {
+      // User is signed out.
+      // ...
+    }
+  });
+}
+
+
 $(document).ready(function() {
-    $('.carousel').carousel(); /*funcion carrusel */
-    //Materialize.scrollFire(options);
+  
+  // Inicializa plugins de Materialize
+  $('.modal').modal();
+  $('.dropdown-button').dropdown();
+  $('.carousel').carousel();
+  //Materialize.scrollFire(options);
 
+  //Cambio de vistas
+  $('#btnProfileUser').click(function(){
+     $('#home').addClass("hide");
+     $('footer').addClass("hide");
+     $('#userProfile').removeClass("hide");
+  }); 
 
-});
+  $('#btnHome').click(function(){
+     $('#home').removeClass("hide");
+     $('footer').removeClass("hide");
+     $('#userProfile').addClass("hide");
+  });
 
-
-//Cambio de vistas
-$('#btnProfileUser').click(function() {
-    $('#home').addClass("hide");
-    $('footer').addClass("hide");
-    $('#userProfile').removeClass("hide");
-});
-
-$('#btnHome').click(function() {
-
-    $('#home').removeClass("hide");
-    $('footer').removeClass("hide");
-    $('#userProfile').addClass("hide");
-});
-
-$('.btnTop').click(function() {
+  // Funciones de búsqueda:
+  $('.btnTop').click(function() {
     var yearValue = 2009;
     console.log(yearValue);
     var url = 'http://www.omdbapi.com/?apikey=942bd4df&s="a"&y=' + yearValue + '&type=' + this.id;
@@ -63,10 +116,9 @@ $('.btnTop').click(function() {
             listAllMovies.append(collectionitem);
         }
     };
-});
+  });
 
-$('#btn_buscar').click(function() {
-
+  $('#btn_buscar').click(function() {
     console.log($('#title_input').val());
     var url = 'http://www.omdbapi.com/?apikey=942bd4df&t=' + $('#title_input').val();
     var request = new XMLHttpRequest();
@@ -78,8 +130,6 @@ $('#btn_buscar').click(function() {
     request.onload = function() {
         var titulo = request.response;
         console.log(titulo);
-
-
 
         var listatitulos = $('#listatitulos');
         listatitulos.html("");
@@ -111,6 +161,7 @@ $('#btn_buscar').click(function() {
             .append(m_image, m_title, m_plot);
 
         listatitulos.append(collectionitem);
-
     };
+  });
+  
 });

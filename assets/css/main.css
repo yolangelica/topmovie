@@ -1,83 +1,99 @@
-*{
+* {
 	margin: 0;
 	padding: 0;
 	font-family: 'Acme', sans-serif;
 }
-body{
+
+body {
 	background-color: #212121;
 }
-nav{
+
+nav {
 	height: 94px;
 	line-height: 94px;
 }
-.logo{
+
+.logo {
 	width: 16em;
 	margin: 1em 2em;
 }
 
-.txt{
+.txt {
 	font-size: 1.5em;
 	color:#858d99;
 }
- a:hover{
-	color:#ab47bc;
+
+a:hover {
+	color: #ab47bc;
 	background-color: #000;
-	
 }
-.box-input{
+
+.box-input {
 	box-sizing: inherit;
 	border-radius: 0.5em;
 }
 
-.txt-1{
+.txt-1 {
 	color: #fff;
 }
-.txt-2{
-	color:#fff;
 
+.txt-2 {
+	color: #fff;
 }
 
-/* *//*navegador*/
+/* Navegador */
 .text-nav {
-	color:#bdbdbd ;
+	color: #bdbdbd;
 }
 
-/*perfil usuario*/
-.colorTextProfile{
-color:#ab47bc ;
+/* Modal Sign In */
+.modalTxt {
+	padding-top: 0.5em;
 }
-.container-profile{
-	border:1px solid black;
-	padding:7%;
+
+.fa {
+	color: #9c27b0;
+	padding: 1em 0.8em;
+}
+
+/* Perfil usuario */
+.colorTextProfile {
+	color: #ab47bc;
+}
+
+.container-profile {
+	border: 1px solid black;
+	padding: 7%;
 	background-color: #FFFFFF;
 }
-.img-profile{
+
+.img-profile {
 	margin-left: 29%;
 }
 
-.container-profile-movil{
+.container-profile-movil {
 	border-bottom: 1px solid black;
-	
 }
-.btn-profile{
-	background-color:  black;
+
+.btn-profile {
+	background-color: black;
 	border-radius: 15px;
-	color:#fff;
-}
-.text-profile{
-	color:#fff;
+	color: #fff;
 }
 
-#copyright{
+.text-profile {
+	color: #fff;
+}
+
+#copyright {
 	margin-left: 15.6em;
-
 }
-/**/
-.coverMovies{
+
+/* Video cover */
+.coverMovies {
 	border: 6px solid white;
 }
 
-.carousel{
+.carousel {
 	margin-top: 0;
-
 }
