@@ -227,7 +227,7 @@ $(document).ready(function () {
       var directorModal = infoTitle.Director;
       var plotModal = infoTitle.Plot;
       // console.log(PosterModal, titleModal, yearModal, actorsModal, directorModal, plotModal);
-      var newName = $('.contentModalMylist')
+      var newName = $('.modalList')
         .append(titleModal);
     };
   });
@@ -250,7 +250,7 @@ $(document).ready(function () {
       var directorModalPending = infoTitlePending.Director;
       var plotModalPending = infoTitlePending.Plot;
       // console.log(PosterModal, titleModal, yearModal, actorsModal, directorModal, plotModal);
-      var newName = $('.contentModalPending')
+      var newName = $('.modalPending')
         .append(titleModalPending);
     };
 
@@ -273,7 +273,7 @@ $(document).ready(function () {
       var directorModalViewed = infoTitleViewed.Director;
       var plotModalViewed = infoTitleViewed.Plot;
       // console.log(PosterModal, titleModal, yearModal, actorsModal, directorModal, plotModal);
-      var newName = $('.contentModalViewed')
+      var newName = $('.modalViews')
         .append(titleModalViewed);
     };
   });
