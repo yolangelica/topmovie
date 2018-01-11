@@ -64,3 +64,53 @@ $('.btnTop').click(function() {
         }
     };
 });
+
+$('#btn_buscar').click(function() {
+
+    console.log($('#title_input').val());
+    var url = 'http://www.omdbapi.com/?apikey=942bd4df&t=' + $('#title_input').val();
+    var request = new XMLHttpRequest();
+    request.open('GET', url);
+    request.responseType = 'json';
+    request.send();
+    $('.video-container').hide();
+
+    request.onload = function() {
+        var titulo = request.response;
+        console.log(titulo);
+
+
+
+        var listatitulos = $('#listatitulos');
+        listatitulos.innerHTML = '';
+
+        var element = titulo.Title;
+        var element2 = titulo.Poster;
+        var element3 = titulo.Plot;
+        //const element2 = 'assets/img/Popcorn (1).png';
+        // console.log(element);
+        //console.log(element2);
+
+        var m_image = $('<img>')
+            .attr({
+                'src': element2,
+                'alt': ""
+            })
+            .addClass("responsive-img ")
+            .css("max-height", "100%");
+
+        var m_title = $('<h2></h2>')
+            .addClass('title')
+            .text(element);
+        var m_plot = $('<span></span>')
+            .addClass('plot')
+            .text(element3);
+
+        var collectionitem = $('<div></div>')
+            .addClass('collection-item avatar')
+            .append(m_image, m_title, m_plot);
+
+        listatitulos.append(collectionitem);
+
+    };
+});
