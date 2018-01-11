@@ -6,7 +6,7 @@ var newEmail = $('#newEmail').val();
 var newPassword = $('#newPassword').val();
 
 function signUp() {
-  firebase.auth().createUserWithEmailAndPassword(newEmail, newPassword).catch(function(error) {
+  firebase.auth().createUserWithEmailAndPassword(newEmail, newPassword).catch(function (error) {
     console.log('Registro exitoso!');
     // Handle Errors here.
     var errorCode = error.code;
@@ -20,19 +20,19 @@ var email = $('#email').val();
 var password = $('#password').val();
 
 function signIn() {
-  firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
-   console.log('Ingreso exitoso!');
-   watcher();
-   // Handle Errors here.
-   var errorCode = error.code;
-   var errorMessage = error.message;
-   // ...
+  firebase.auth().signInWithEmailAndPassword(email, password).catch(function (error) {
+    console.log('Ingreso exitoso!');
+    watcher();
+    // Handle Errors here.
+    var errorCode = error.code;
+    var errorMessage = error.message;
+    // ...
   });
 }
 
 // OBSERVADOR DE ESTADO:
 function watcher() {
-  firebase.auth().onAuthStateChanged(function(user) {
+  firebase.auth().onAuthStateChanged(function (user) {
     if (user) {
       // User is signed in.
       var displayName = user.displayName;
@@ -51,8 +51,8 @@ function watcher() {
 }
 
 
-$(document).ready(function() {
-  
+$(document).ready(function () {
+
   // Inicializa plugins de Materialize
   $('.modal').modal();
   $('.dropdown-button').dropdown();
@@ -60,20 +60,20 @@ $(document).ready(function() {
   //Materialize.scrollFire(options);
 
   //Cambio de vistas
-  $('#btnProfileUser').click(function(){
-     $('#home').addClass("hide");
-     $('footer').addClass("hide");
-     $('#userProfile').removeClass("hide");
-  }); 
+  $('#btnProfileUser').click(function () {
+    $('#home').addClass("hide");
+    $('footer').addClass("hide");
+    $('#userProfile').removeClass("hide");
+  });
 
-  $('#btnHome').click(function(){
-     $('#home').removeClass("hide");
-     $('footer').removeClass("hide");
-     $('#userProfile').addClass("hide");
+  $('#btnHome').click(function () {
+    $('#home').removeClass("hide");
+    $('footer').removeClass("hide");
+    $('#userProfile').addClass("hide");
   });
 
   // Funciones de búsqueda:
-  $('.btnTop').click(function() {
+  $('.btnTop').click(function () {
     var yearValue = 2009;
     console.log(yearValue);
     var url = 'http://www.omdbapi.com/?apikey=942bd4df&s="a"&y=' + yearValue + '&type=' + this.id;
@@ -83,42 +83,48 @@ $(document).ready(function() {
     request.responseType = 'json';
     request.send();
 
-    request.onload = function() {
-        var movies = request.response;
-        console.log(movies);
-        console.log(movies.Search);
-        //Busqueda por año. Todas las peliculas del año que introduce el usuario que contengan la letra a
-        var listAllMovies = $('#collection-id');
-        listAllMovies.html("");
-        for (let i = 0; i < movies.Search.length; i++) {
-            const element = movies.Search[i].Title;
-            const element2 = movies.Search[i].Poster;
-            //const element2 = 'assets/img/Popcorn (1).png';
-            // console.log(element);
-            //console.log(element2);
+    request.onload = function () {
+      var movies = request.response;
+      console.log(movies);
+      console.log(movies.Search);
+      //Busqueda por año. Todas las peliculas del año que introduce el usuario que contengan la letra a
+      var listAllMovies = $('#collection-id');
+      listAllMovies.html("");
+      for (let i = 0; i < movies.Search.length; i++) {
+        const element = movies.Search[i].Title;
+        const element2 = movies.Search[i].Poster;
+        //const element2 = 'assets/img/Popcorn (1).png';
+        // console.log(element);
+        //console.log(element2);
 
-            var m_image = $('<img>')
-                .attr({
-                    'src': element2,
-                    'alt': ""
-                })
-                .addClass("responsive-img circle")
-                .css("max-height", "100%");
+        var m_image = $('<img>')
+          .attr({
+            'src': element2,
+            'alt': ""
+          })
+          .addClass("responsive-img circle")
+          .css("max-height", "100%");
 
-            var m_title = $('<span></span>')
-                .addClass('title')
-                .text(element);
+        var m_title = $('<span></span>')
+          .addClass('title')
+          .text(element);
 
-            var collectionitem = $('<li></li>')
-                .addClass('collection-item avatar')
-                .append(m_image, m_title);
+        var groupButton = $('<div></div>')
+          .addClass("horizontal right");
+        groupButton.html('<a class="btn-floating red"><i class="material-icons">add_circle_outline</i></a> \
+      <a class="btn-floating yellow darken-1"><i class="material-icons">access_time</i></a> \
+      <a class="btn-floating green"><i class="material-icons">check</i></a>');
 
-            listAllMovies.append(collectionitem);
-        }
+        var collectionitem = $('<li></li>')
+          .addClass('collection-item avatar')
+          .append(m_image, m_title, groupButton);
+
+        listAllMovies.append(collectionitem);
+      }
     };
   });
 
-  $('#btn_buscar').click(function() {
+  $('#btn_buscar').click(function () {
     console.log($('#title_input').val());
     var url = 'http://www.omdbapi.com/?apikey=942bd4df&t=' + $('#title_input').val();
     var request = new XMLHttpRequest();
@@ -127,41 +133,41 @@ $(document).ready(function() {
     request.send();
     $('.video-container').hide();
 
-    request.onload = function() {
-        var titulo = request.response;
-        console.log(titulo);
+    request.onload = function () {
+      var titulo = request.response;
+      console.log(titulo);
 
-        var listatitulos = $('#listatitulos');
-        listatitulos.html("");
+      var listatitulos = $('#listatitulos');
+      listatitulos.html("");
 
-        var element = titulo.Title;
-        var element2 = titulo.Poster;
-        var element3 = titulo.Plot;
-        //const element2 = 'assets/img/Popcorn (1).png';
-        // console.log(element);
-        //console.log(element2);
+      var element = titulo.Title;
+      var element2 = titulo.Poster;
+      var element3 = titulo.Plot;
+      //const element2 = 'assets/img/Popcorn (1).png';
+      // console.log(element);
+      //console.log(element2);
 
-        var m_image = $('<img>')
-            .attr({
-                'src': element2,
-                'alt': ""
-            })
-            .addClass("responsive-img ")
-            .css("max-height", "100%");
+      var m_image = $('<img>')
+        .attr({
+          'src': element2,
+          'alt': ""
+        })
+        .addClass("responsive-img ")
+        .css("max-height", "100%");
 
-        var m_title = $('<h2></h2>')
-            .addClass('title')
-            .text(element);
-        var m_plot = $('<span></span>')
-            .addClass('plot')
-            .text(element3);
+      var m_title = $('<h2></h2>')
+        .addClass('title')
+        .text(element);
+      var m_plot = $('<span></span>')
+        .addClass('plot')
+        .text(element3);
 
-        var collectionitem = $('<div></div>')
-            .addClass('collection-item avatar')
-            .append(m_image, m_title, m_plot);
+      var collectionitem = $('<div></div>')
+        .addClass('collection-item avatar')
+        .append(m_image, m_title, m_plot);
 
-        listatitulos.append(collectionitem);
+      listatitulos.append(collectionitem);
     };
   });
-  
+
 });
