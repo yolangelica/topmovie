@@ -126,10 +126,14 @@ $(document).ready(function () {
 
   /* ====== FUNCIONES DE BÚSQUEDA ====== */
 
+  function randomYear(min, max) {
+  return Math.round(Math.random() * (max - min) + min);
+	}
+
   // Tabs:
   $("ul.tabs").tabs({
     onShow: function (tab) {
-      var yearValue = 2009;
+      var yearValue = randomYear(1980, 2018);
       // console.log(yearValue);
       var url = 'http://www.omdbapi.com/?apikey=942bd4df&s="a"&y=' + yearValue + '&type=' + tab[0].id;
       console.log(this.name);
@@ -152,99 +156,48 @@ $(document).ready(function () {
         }
         listAllMovies.html("");
         for (let i = 0; i < movies.Search.length; i++) {
-          const element = movies.Search[i].Title;
-          const element2 = movies.Search[i].Poster;
-          //const element2 = 'assets/img/Popcorn (1).png';
-          // console.log(element);
-          //console.log(element2);
-
-          var m_image = $('<img>')
-            .attr({
-              'src': element2,
-              'alt': ""
-            })
-            .addClass("responsive-img circle")
-            .css("max-height", "100%");
-
-          var m_title = $('<span></span>')
-            .addClass('title')
-            .text(element);
-
-          var groupButton = $('<div></div>')
-            .addClass('horizontal right');
-          groupButton.html('<a class="btn-floating red btnMylist"><i class="material-icons">add_circle_outline</i></a> \
-            <a class="btn-floating yellow darken-1 btnPending"><i class="material-icons">access_time</i></a> \
-            <a class="btn-floating green btnViewed"><i class="material-icons">check</i></a>');
-
-          var collectionitem = $('<li></li>')
-            .addClass('collection-item avatar')
-            .append(m_image, m_title, groupButton);
-
-          listAllMovies.append(collectionitem);
+        	$('#' + tab[0].id).append(
+	    			"<div class='col s3'>" +
+							"<div class='card'>" +
+								"<div class='card-image waves-effect waves-block waves-light'>" +
+				    			"<img class='activator' src='" + movies['Search'][i]['Poster'] + "'>" +
+				    		"</div>" +
+				    		"<div class='card-content'>" +
+				    			"<div class='row'>" +
+									  "<div class='boxTitle col s11'>" +
+									    "<span class='card-title title activator grey-text text-darken-4'>" + movies['Search'][i]['Title'] + "</span>" +
+									  "</div>" +
+									  "<div class='col s1'>" +
+									    "<i class='material-icons right'>more_vert</i>" +
+									  "</div>" +
+									"</div>" +
+									"<div class='row'>" +
+									  "<div class='col s6'>" +
+									    "<span>" + movies['Search'][i]['Year'] + "</span>" +
+									  "</div>" +
+									  "<div class='col s6'>" +
+									    "<a class='btnMylist right'><i class='btnList material-icons'>add</i></a>" +
+				      				"<a class='btnPending right'><i class='btnList material-icons'>access_time</i></a>" +
+            					"<a class='btnViewed right'><i class='btnList material-icons'>done</i></a>" +
+									  "</div>" +
+									"</div>" +
+				    		"</div>" +
+				    		"<div class='card-reveal'>" +
+				    			"<span class='card-title grey-text text-darken-4'>" + movies['Search'][i]['Title'] + "<i class='material-icons right'>close</i></span>" +
+				      		"<p>" + movies['Search'][i]['Year'] + "</p>" +
+				    		"</div>" +
+							"</div>" +
+						"</div>"
+	 				);
         }
       };
     }
   });
-  /*   $('.btnTop').click(function () {
-      var yearValue = 2009;
-      // console.log(yearValue);
-      var url = 'http://www.omdbapi.com/?apikey=942bd4df&s="a"&y=' + yearValue + '&type=' + this.name;
-      console.log(this.name);
-      var request = new XMLHttpRequest();
-      request.open('GET', url);
-      request.responseType = 'json';
-      request.send();
+  
 
-      request.onload = function () {
-        var movies = request.response;
-        console.log(movies);
-        // console.log(movies.Search);
-
-        //Busqueda por año. Todas las peliculas del año que introduce el usuario que contengan la letra a
-        var listAllMovies;
-        if (this.name == 'movie') {
-          listAllMovies = $('#collection-movie');
-        } else {
-          listAllMovies = $('#collection-serie');
-        }
-        listAllMovies.html("");
-        for (let i = 0; i < movies.Search.length; i++) {
-          const element = movies.Search[i].Title;
-          const element2 = movies.Search[i].Poster;
-          //const element2 = 'assets/img/Popcorn (1).png';
-          // console.log(element);
-          //console.log(element2);
-
-          var m_image = $('<img>')
-            .attr({
-              'src': element2,
-              'alt': ""
-            })
-            .addClass("responsive-img circle")
-            .css("max-height", "100%");
-
-          var m_title = $('<span></span>')
-            .addClass('title')
-            .text(element);
-
-          var groupButton = $('<div></div>')
-            .addClass('horizontal right');
-          groupButton.html('<a class="btn-floating red btnMylist"><i class="material-icons">add_circle_outline</i></a> \
-            <a class="btn-floating yellow darken-1 btnPending"><i class="material-icons">access_time</i></a> \
-            <a class="btn-floating green btnViewed"><i class="material-icons">check</i></a>');
-
-          var collectionitem = $('<li></li>')
-            .addClass('collection-item avatar')
-            .append(m_image, m_title, groupButton);
-
-          listAllMovies.append(collectionitem);
-        }
-      };
-    }); */
-
-  $('#btn_buscar').click(function () {
-    // console.log($('#title_input').val());
-    var url = 'http://www.omdbapi.com/?apikey=942bd4df&s=' + $('#title_input').val();
+  $('#btnSearch').click(function () {
+    console.log($('#search').val());
+    var url = 'http://www.omdbapi.com/?apikey=942bd4df&s=' + $('#search').val();
     var request = new XMLHttpRequest();
     request.open('GET', url);
     request.responseType = 'json';
@@ -253,7 +206,7 @@ $(document).ready(function () {
 
     request.onload = function () {
       var titulo = request.response;
-      // console.log(titulo);
+      console.log(titulo);
 
       var listatitulos = $('#listatitulos');
       listatitulos.html("");
@@ -313,13 +266,14 @@ $(document).ready(function () {
   });
 
   $(document).on('click', '.btnPending', function () {
-    // Your Code
+
+    // Contador:
     var containerNumberPending = $('.containerNumberPending');
     counterPending++;
     containerNumberPending.html('');
     containerNumberPending.append(counterPending);
 
-    var searchPending = ($(this).parent().parent().find('.title').text());
+    var searchPending = ($(this).parent().parent().parent().find('.title').text());
     var urlPending = 'http://www.omdbapi.com/?apikey=942bd4df&t=' + searchPending;
     var request = new XMLHttpRequest();
     request.open('GET', urlPending);
@@ -327,19 +281,18 @@ $(document).ready(function () {
     request.send();
     request.onload = function () {
       var infoTitlePending = request.response;
-      // console.log(infoTitlePending);
+      console.log(infoTitlePending);
       var PosterModalPending = infoTitlePending.Poster;
       var titleModalPending = infoTitlePending.Title;
       var yearModalPending = infoTitlePending.Year;
       var actorsModalPending = infoTitlePending.Actors;
       var directorModalPending = infoTitlePending.Director;
       var plotModalPending = infoTitlePending.Plot;
+
       // console.log(PosterModal, titleModal, yearModal, actorsModal, directorModal, plotModal);
+      
       //Agregar a Modal=================
-
       var newNameP = $('.modalPending');
-
-
       var divContent = $('<div></div>');
       divContent.addClass('divContentP');
       var imgContent = $('<img>')
@@ -369,19 +322,19 @@ $(document).ready(function () {
         .addClass('texto');
       divContentP.append(imgContentP, textoP);
       newNamePP.append(divContentP);
-
-
     };
   });
+
   $(document).on('click', '.btnViewed', function () {
     // Your Code
+
     console.log('Presionado Visto');
     var containerNumberViews = $('.containerNumberViews');
     counterViews++;
     containerNumberViews.html('');
     containerNumberViews.append(counterViews);
 
-    var searchViewed = ($(this).parent().parent().find('.title').text());
+    var searchViewed = ($(this).parent().parent().parent().find('.title').text());
     var urlViewed = 'http://www.omdbapi.com/?apikey=942bd4df&t=' + searchViewed;
     var request = new XMLHttpRequest();
     request.open('GET', urlViewed);

@@ -18,8 +18,7 @@
         <img src="assets/img/Popcorn (2).png" alt="" class="logo">
         <ul class="right hide-on-med-and-down">
           <li>
-            <a href="#ModalSearch" class="text-nav modal-trigger" id="btnSearch">
-              <i class="material-icons left">search</i>Buscar</a>
+            <a href="#modalSearch" class="text-nav modal-trigger"><i class="material-icons left">search</i>Buscar</a>
           </li>
           <li>
             <a class="text-nav" id="btnHome">Home</a>
@@ -27,22 +26,29 @@
           <li>
             <a href="#ModalViewed" class="text-nav modal-trigger" id="btnViewed">Vistas</a>
           </li>
-          <!--Modal de búsqueda-->
-          <div id="ModalSearch" class="modal">
-            <div class="modal-content colorViews">
-              <input id="title_input" type="text" required autocomplete=off>
-              <div class="modalSearch"></div>
+          <!--Modal Búsqueda-->
+          <div id="modalSearch" class="modal">
+            <div class="modal-content">
+              <h5>Busca un título</h5>
+              <form>
+                <div class="input-field">
+                  <input id="search" type="search" required autocomplete=off>
+                  <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+                  <i class="material-icons">close</i>
+                  <a id="btnSearch" href="#"><i class="material-icons">done</i></a>
+                </div>
+              </form>
             </div>
             <div class="modal-footer">
               <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">
                 <i class="material-icons">close</i>
               </a>
             </div>
-          </div>
+          </div> <!-- fin Modal Búsqueda --> 
           <!-- Inicio del Modal Viewed -->
           <div id="ModalViewed" class="modal">
-            <div class="modal-content colorViews">
-              <h4 class="contentModalViewed">Últimas películas vistas</h4>
+            <div class="modal-content">
+              <h5 class="contentModalViewed">Últimas películas vistas</h5>
               <div class="modalViewed"></div>
             </div>
             <div class="modal-footer">
@@ -53,12 +59,12 @@
           </div>
           <!-- Fin del Modal Viewed -->
           <li>
-            <a href="#ModalPending" class="text-nav modal-trigger" id="btnPending">Pendientes</a>
+            <a href="#modalPending" class="text-nav modal-trigger" id="btnPending">Pendientes</a>
           </li>
           <!-- Inicio del Modal Pending -->
-          <div id="ModalPending" class="modal">
-            <div class="modal-content colorViews">
-              <h4 class="contentModalPending">Últimas películas pendientes</h4>
+          <div id="modalPending" class="modal">
+            <div class="modal-content">
+              <h5 class="contentModalPending">Últimas películas pendientes</h5>
               <div class="modalPending"></div>
             </div>
             <div class="modal-footer">
@@ -73,8 +79,8 @@
           </li>
           <!-- Inicio del Modal Mylist -->
           <div id="ModalMylist" class="modal">
-            <div class="modal-content colorViews">
-              <h4 class="contentModalMylist">Mis Listas</h4>
+            <div class="modal-content">
+              <h5 class="contentModalMylist">Mis Listas</h5>
               <div class="modalList"></div>
             </div>
             <div class="modal-footer">
@@ -89,7 +95,7 @@
           </li>
           <!-- Dropdown Trigger -->
           <li>
-            <a id="btnProfileUser" class="dropdown-button text-nav" href="#!" data-activates="dropdown1">Perfil </a>
+            <a id="btnProfileUser" class="dropdown-button text-nav" href="#!" data-activates="dropdown1">Perfil</a>
           </li>
         </ul>
       </div>
@@ -233,46 +239,30 @@
       </div>
     </div>
     <!-- Pestañas Sugerencias Películas y Series -->
-    <!--div class="container-fluid"-->
-    <div class="row">
-      <div class="col s12">
-        <ul class="tabs tabs-fixed-width grey darken-4">
-          <li class="tab col s6">
-            <a class='btnTop white-text' name='movie' href='#movie'>Películas</a>
-          </li>
-          <li class="tab col s6">
-            <a class='btnTop white-text' name='series' href='#series'>Series</a>
-          </li>
-        </ul>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col s12">
+          <h2 class="white-text">Recomendadas</h2>
+        </div>
       </div>
-      <div id="movie" class="col s6">
-        <ul id="collection-movie" class="collection">
-        </ul>
+      <div class="row">
+        <div class="col s12">
+          <ul class="tabs grey darken-4">
+            <li class="tab col s6">
+              <a class='btnTop white-text' name='movie' href='#movie'>Películas</a>
+            </li>
+            <li class="tab col s6">
+              <a class='btnTop white-text' name='series' href='#series'>Series</a>
+            </li>
+          </ul>
+        </div>
+        <div class="row">
+          <div id="movie" class="col s12"></div>
+        </div>
+        <div class="row">
+          <div id="series" class="col s12"></div>
+        </div>
       </div>
-      <div id="series" class="col s6 offset-s6">
-        <ul id="collection-serie" class="collection">
-        </ul>
-      </div>
-    </div>
-    <!-- BOTONES ORIGINALES SERIES Y PELICULAS -->
-    <!--<div class="col s12 center-align">
-        <a id="movie" class="purple waves-effect waves-light btn btnTop">
-          <i class="material-icons left">local_movies</i>Películas</a>
-        <a id="series" class="purple waves-effect waves-light btn btnTop">
-          <i class="material-icons left">local_movies</i>Series</a>
-        <!-- <a id="episode" class="purple waves-effect waves-light btn btnTop"> <i class="material-icons left">local_movies</i>Episodios</a> -->
-    <!--</div> -->
-    <!-- <div class="col s12 ">
-        <ul id="collection-id" class="collection">
-          <!-- <li class="collection-item avatar">
-              <img src="images/yuna.jpg" alt="" class="circle">
-              <span class="title">Title</span>
-              <p>First Line <br> Second Line
-              </p>
-              <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
-            </li> 
-        </ul> FIN BOTONES-->
-    </div>
     </div>
   </section>
   <!--PERFIL USUARIO-->
@@ -522,5 +512,4 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
   <script src="assets/js/app.js"></script>
 </body>
-
 </html>
