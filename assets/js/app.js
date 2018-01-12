@@ -349,7 +349,7 @@ $(document).ready(function () {
       var directorModalViewed = infoTitleViewed.Director;
       var plotModalViewed = infoTitleViewed.Plot;
       // console.log(PosterModal, titleModal, yearModal, actorsModal, directorModal, plotModal);
-      var newName = $('.modalViews')
+      var newName = $('.modalViewed')
         .append(titleModalViewed);
     };
   });

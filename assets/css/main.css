@@ -24,7 +24,7 @@ nav {
 }
 
 a:hover {
-	color: #ab47bc;
+    color: #ab47bc;
 }
 
 .box-input {
@@ -67,6 +67,7 @@ a:hover {
     font-size: 2em;
 }
 
+
 /* Perfil usuario */
 
 .colorTextProfile {
@@ -104,35 +105,44 @@ a:hover {
 
 /* Video cover */
 
-.slider-frame{
-  background-color: #0f0;
-  position: relative;
-  margin: 0 auto;
-  overflow: hidden;
+.slider-frame {
+    background-color: #0f0;
+    position: relative;
+    margin: 0 auto;
+    overflow: hidden;
 }
-.btnNetflix{
-  width: 40px;
-  height: 100%;
-  background: rgba(0,0,0,0.3);
-  position: absolute;
-  top: 0;
-  z-index: 1000;
+
+.btnNetflix {
+    width: 40px;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    position: absolute;
+    top: 0;
+    z-index: 1000;
 }
-.prev{
-  left: 0px;
+
+.prev {
+    left: 0px;
 }
-.next{
-  right: 0px;
+
+.next {
+    right: 0px;
 }
-.slider-container{
-  transition: margin-left .2s ease, left .5s ease;
-  position: absolute;
-  left: 0;
+
+.slider-container {
+    transition: margin-left .2s ease, left .5s ease;
+    position: absolute;
+    left: 0;
 }
-.slide{
-  background-color: #f00;
-  float: left;
-  position: relative;
-  top: 0;
-  transition: width .2s ease, height .2s ease, top .2s ease;
+
+.slide {
+    background-color: #f00;
+    float: left;
+    position: relative;
+    top: 0;
+    transition: width .2s ease, height .2s ease, top .2s ease;
+}
+
+.colorViews {
+    color: #000;
 }
