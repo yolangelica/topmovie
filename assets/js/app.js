@@ -1,36 +1,38 @@
 /* ========== AUTENTICACION FIREBASE =========== */
 
 // SIGN UP:
-var newUserName = $('#newUserName').val();
-var newName = $('#newName').val();
-var newLastName = $('#newLastName').val();
-var newUserName = $('#newUserName').val();
-var newEmail = $('#newEmail').val();
-var newPassword = $('#newPassword').val();
-
 function signUp() {
+
+	var newUserName = $('#newUserName').val();
+	var newName = $('#newName').val();
+	var newLastName = $('#newLastName').val();
+	var newUserName = $('#newUserName').val();
+	var newEmail = $('#newEmail').val();
+	var newPassword = $('#newPassword').val();
+
   firebase.auth().createUserWithEmailAndPassword(newEmail, newPassword)
-    .catch(function (error) {
-      // Handle Errors here.
-      var errorCode = error.code;
-      var errorMessage = error.message;
-      // ...
-    });
+  .catch(function (error) {
+  	// Handle Errors here.
+    var errorCode = error.code;
+    var errorMessage = error.message;
+    // ...
+  });
 }
 
 // SIGN IN:
-var email = $('#email').val();
-var password = $('#password').val();
-
 function signIn() {
+
+	var email = $('#email').val();
+	var password = $('#password').val();
+
   firebase.auth().signInWithEmailAndPassword(email, password)
-    .catch(function (error) {
-      // console.log('Ingreso exitoso!');
-      // Handle Errors here.
-      var errorCode = error.code;
-      var errorMessage = error.message;
-      // ...
-    });
+  .catch(function (error) {
+  	// console.log('Ingreso exitoso!');
+    // Handle Errors here.
+    var errorCode = error.code;
+    var errorMessage = error.message;
+    // ...
+  });
 }
 
 // OBSERVADOR DE ESTADO:
@@ -38,10 +40,10 @@ function watcher() {
   firebase.auth().onAuthStateChanged(function (user) {
     if (user) {
       // User is signed in.
-      // console.log('Usuario activo!');
-      // console.log(user);
-      $('#videoCover').hide();
-      $('#catchPhrase').hide();
+      console.log('Usuario activo!');
+      console.log(user);
+      //$('#videoCover').hide();
+      //$('#catchPhrase').hide();
       $('#btnProfileUser').show();
       $('#logInBtn').hide();
       var displayName = user.displayName;
@@ -58,7 +60,7 @@ function watcher() {
       $('#catchPhrase').show();
       //$('#btnProfileUser').hide();
       $('#logInBtn').show();
-      // console.log('No hay usuario activo!');
+      console.log('No hay usuario activo!');
     }
   });
 }
@@ -123,7 +125,6 @@ $(document).ready(function () {
   /* ====== FUNCIONES DE BÚSQUEDA ====== */
 
   // Tabs:
-  //$('ul.tabs').tabs('select_tab', '#test2');
   $("ul.tabs").tabs({
     onShow: function (tab) {
       var yearValue = 2009;
@@ -385,7 +386,6 @@ function init() {
   //counts
   var scollWidth = 0;
 
-
   //sizes
   var windowWidth = win.width();
   var frameWidth = win.width() - 80;
@@ -402,12 +402,9 @@ function init() {
   var videoWidthDiff = (videoWidth * scaling) - videoWidth;
   var videoHeightDiff = (videoHeight * scaling) - videoHeight;
 
-
-
   //set sizes
   sliderFrame.width(windowWidth);
   sliderFrame.height(videoHeight * scaling);
-
 
   //sliderFrame.css("top", (videoHeightDiff / 2));
 
@@ -473,5 +470,5 @@ function controls(frameWidth, scollWidth) {
   });
 };
 
-//Funcion boton perfil desplegable
+//Función botón perfil desplegable
  $(".button-collapse").sideNav();

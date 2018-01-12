@@ -1,5 +1,4 @@
 <html lang="es">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,7 +8,6 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/main.css">
 </head>
-
 <body>
   <header>
     <!-- Navbar -->
@@ -17,33 +15,33 @@
       <div class="nav-wrapper black lighten-2">
         <img src="assets/img/Popcorn (2).png" alt="" class="logo">
         <ul class="right hide-on-med-and-down">
-        <li><a href="#ModalViewed" class="text-nav modal-trigger" id="btnViewed"><i class="material-icons left">search</i>Buscar</a></li>
+          <li>
+            <a href="#ModalSearch" class="text-nav modal-trigger" id="btnSearch"><i class="material-icons left">search</i>Buscar</a>
+          </li>
           <li>
             <a class="text-nav" id="btnHome">Home</a>
           </li>
           <li>
             <a href="#ModalViewed" class="text-nav modal-trigger" id="btnViewed">Vistas</a>
           </li>
-
-          <!--Modal de busqueda-->
-        <div id="ModalViewed" class="modal">
-          <div class="modal-content colorViews">
+          <!--Modal de búsqueda-->
+          <div id="ModalSearch" class="modal">
+            <div class="modal-content colorViews">
               <input id="title_input" type="text" required autocomplete=off>
               <div class="modalViewed"></div>
             </div>
             <div class="modal-footer">
-              <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Listo</a>
+              <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat"><i class="material-icons">close</i></a>
             </div>
           </div> 
-
           <!-- Inicio del Modal Viewed -->
           <div id="ModalViewed" class="modal">
             <div class="modal-content colorViews">
-              <h4 class="contentModalViewed">Lista de las películas vistas</h4>
+              <h4 class="contentModalViewed">Últimas películas vistas</h4>
               <div class="modalViewed"></div>
             </div>
             <div class="modal-footer">
-              <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Visto</a>
+              <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat"><i class="material-icons">close</i></a>
             </div>
           </div>
           <!-- Fin del Modal Viewed -->
@@ -53,11 +51,11 @@
           <!-- Inicio del Modal Pending -->
           <div id="ModalPending" class="modal">
             <div class="modal-content colorViews">
-              <h4 class="contentModalPending">Lista de las películas pendientes</h4>
+              <h4 class="contentModalPending">Últimas películas pendientes</h4>
               <div class="modalPending"></div>
             </div>
             <div class="modal-footer">
-              <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Visto</a>
+              <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat"><i class="material-icons">close</i></a>
             </div>
           </div>
           <!-- Fin del Modal Pending -->
@@ -71,12 +69,12 @@
               <div class="modalList"></div>
             </div>
             <div class="modal-footer">
-              <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Visto</a>
+              <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat"><i class="material-icons">close</i></a>
             </div>
           </div>
           <!-- Fin del Modal Mylist -->
           <li>
-            <a class="waves-effect waves-light btn purple modal-trigger" href="#modal1">INGRESAR</a>
+            <a id="logInBtn" class="waves-effect waves-light btn purple modal-trigger" href="#modal1">INGRESAR</a>
           </li>
           <!-- Dropdown Trigger -->
           <li>
@@ -193,24 +191,29 @@
   <!-- VISTA PRINCIPAL -->
   <section id="home">
     <!-- Video cover -->
+    <!--<div id="videoCover" class="row">
+      <div class="col s12 ">
+        <div class="video-container">
+          <iframe width="854" height="480" src="https://www.youtube.com/embed/n7RkOfN8KvE/ID_VIDEO?rel=0&autoplay=1" frameborder="0"
+            allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div> -->
     <div id="catchPhrase" class="row">
-  <div class="col s12">
-    <div class="text-fondo">
-      <h1 class="txt-1 center  deep-purple-text">Explora y ordena tus películas y series favoritas!</h1>
-        <h5 class="txt-2 center deep-purple-text">Nunca más olvidarás aquella película que te recomendaron</h5>
+      <div class="col s12">
+        <div class="text-fondo">
+          <h1 class="txt-1 center  deep-purple-text">Explora y ordena tus películas y series favoritas!</h1>
+          <h5 class="txt-2 center deep-purple-text">Nunca más olvidarás aquella película que te recomendaron</h5>
         </div>
       </div>
     </div>
-
-<div class="row">
-  <div class="video-container">
-    <iframe id="video-background" width="560" height="315" src="https://www.youtube.com/embed/n7RkOfN8KvE/ID_VIDEO?rel=0&autoplay=1 ?wmode=transparent"   frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-  </div>
-</div>
-
-
-
-        
+    <div class="row">
+      <div class="col s12">
+        <div id="videoCover" class="video-container">
+          <iframe id="video-background" width="560" height="315" src="https://www.youtube.com/embed/n7RkOfN8KvE/ID_VIDEO?rel=0&autoplay=1 ?wmode=transparent"   frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
     <!-- Resultados de Búsqueda -->
     <div class="row">
       <div id="listatitulos" class="col s12">
