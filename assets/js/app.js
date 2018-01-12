@@ -480,5 +480,5 @@ function saveList(){
   $("#lineNew").append("<div id='pin_" + idPin + " ' class='pin col-md-3'>" + 
   //este es el frente
   "<h6 class='flow-text white-text titleList'>" + titulo + "</h6>" + "</div>");
-
+  $('#titlelist').val("");
 };

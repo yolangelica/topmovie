@@ -329,19 +329,20 @@
   <!--  SECCIÓN MIS LISTAS -->
   <section class="hide" id="myList">
     <div class="row">
-      <div class="col l12">
+      <div class="col l6">
         <h3 class="white-text" >Mis Listas</h3>
-        <div class="col l6 offset-l6">
-          <div class="container"><!--crea titulo listas peliculas-->
-            <form action="javascript:saveList()"><!--llama a funcion crear listas peliculas -->
-              <div class="input-group">
-                <span class="input-group-addon white-text">New List</span>
-                <input id="titlelist" type="text" class="form-control width-text" aria-describedby="titulo">
-              </div>
-              <button type="submit" class="btn btn-default  black">Guardar</button>
-            </form>
-          </div><!--close container crear listas-->
-        </div>
+      </div>
+      <div class="col l6">
+        <div class="container"><!--crea titulo listas peliculas-->
+          <form action="javascript:saveList()"><!--llama a funcion crear listas peliculas -->
+            <div class="input-group">
+              <span class="input-group-addon white-text"></span>
+              <input id="titlelist" type="text" class="form-control width-text white-text" aria-describedby="titulo" placeholder="Agrega una lista">
+            </div>
+            <button type="submit" class="btn btn-default  black">Guardar</button>
+          </form>
+        </div><!--close container crear listas-->
+      </div>
         <div class="slider-frame">
           <h6 class="flow-text white-text titleList">Harry Potter</h6>
           <div class="btnNetflix prev"></div>
