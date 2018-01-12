@@ -44,8 +44,6 @@ function watcher() {
       // User is signed in.
       console.log('Usuario activo!');
       console.log(user);
-      //$('#videoCover').hide();
-      //$('#catchPhrase').hide();
       $('#btnProfileUser').show();
       $('#logInBtn').hide();
       var displayName = user.displayName;
@@ -60,7 +58,7 @@ function watcher() {
       // User is signed out.
       $('#videoCover').show();
       $('#catchPhrase').show();
-      //$('#btnProfileUser').hide();
+      $('#btnProfileUser').hide();
       $('#logInBtn').show();
       console.log('No hay usuario activo!');
     }
