@@ -471,4 +471,14 @@ function controls(frameWidth, scollWidth) {
 };
 
 //Función botón perfil desplegable
- $(".button-collapse").sideNav();
+ $(".button-collapse").sideNav(); 
+
+ //Funcion crea titulo nuevas listas
+ var idPin= 0 ;
+function saveList(){
+  var titulo = $("#titlelist").val();//crea variable para rescatar valor escrito por usuario en titulo llamando ID desde HTML
+  $("#lineNew").append("<div id='pin_" + idPin + " ' class='pin col-md-3'>" + 
+  //este es el frente
+  "<h6 class='flow-text white-text titleList'>" + titulo + "</h6>" + "</div>");
+
+};

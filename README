@@ -1,9 +1,34 @@
+﻿Hackathon Laboratoria
 Proyecto: Top Movies
+Temática sobre el  consumo de películas y para ello creamos como equipo una solución/producto.
 Desarrolladoras: Ligia Cautela, Claudina Cortez, Makarena Fernández, Yolanda Rayman, Carla Zumarán.
-
-- El proyecto trata de una web app que permita al usuario crear listas personalizadas donde pueda agrupar sus 
-  peliculas y/o series que comparten algo en común. Inicialmente dispondrá de dos listas prediseñadas: la de peliculas 
-  ya vistas, y la de peliculas que desea ver en el futuro.
+Organización
  
- -La división de las tareas fue que Yolanda y Ligia se preocuparian del maquetado completo de la app con todas sus vistas, 
-  y que Makarena, Claudina y Carla se encargarían de la funcionalidad completa de la app.
+Para organizarnos realizamos daily diarios.
+Creamos horarios con las tareas que se deben cumplir en ese tiempo.
+
+Delegamos trabajos por equipos.
+2 Retrospectivas, una a mitad de jornada y otra finalizando.
+Nuestro Producto
+- El proyecto trata de una web app que permita al usuario crear listas personalizadas donde pueda agrupar sus 
+  películas y/o series que comparten algo en común. Inicialmente dispondrá de dos listas prediseñadas: la de películas  ya vistas, y la de películas que desea ver en el futuro.
+Público Objetivo
+Para personas que consuman recurrentemente películas, quieran guardar listas de películas que deseen ver más adelante y quienes deseen llevar un ranking de películas que ya han visto
+
+Valor agregado
+- Es simple de usar.
+-guarda listas de películas.
+-crea listas personalizadas.
+- Tiene un diseño amigable e intuitivo.
+Investigación mercado
+Realizamos entrevistas entre el grupo y una encuesta en redes sociales.
+
+Herramientas
+- Javascript.
+- HTML5.
+- CSS3.
+- Librería jQuery.
+- Framework Materialize.
+- API de Open Movie Database (OMDB) o the movie database.
+- Modales de registro e inicio de sesión.
+
