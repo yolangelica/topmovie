@@ -158,13 +158,13 @@ $(document).ready(function () {
         for (let i = 0; i < movies.Search.length; i++) {
         	$('#' + tab[0].id).append(
 	    			"<div class='col s3'>" +
-							"<div class='card'>" +
-								"<div class='card-image waves-effect waves-block waves-light'>" +
+							"<div class='card cardXL'>" +
+								"<div class='card-image imageXL waves-effect waves-block waves-light'>" +
 				    			"<img class='activator' src='" + movies['Search'][i]['Poster'] + "'>" +
 				    		"</div>" +
 				    		"<div class='card-content'>" +
 				    			"<div class='row'>" +
-									  "<div class='boxTitle col s11'>" +
+									  "<div class='boxTitleXL col s11'>" +
 									    "<span class='card-title title activator grey-text text-darken-4'>" + movies['Search'][i]['Title'] + "</span>" +
 									  "</div>" +
 									  "<div class='col s1'>" +
@@ -194,8 +194,52 @@ $(document).ready(function () {
     }
   });
   
+  // Función de búsqueda Search Bar:
+	$('#btnSearch').click(function() {
+		$('#searchResults').children().remove();
+		var searchTitle = $('#search').val().replace(/ /g, '+');
+    
+	  $.getJSON('http://www.omdbapi.com/?apikey=3a181f1c&s=' + searchTitle, function(result) {
+	  	console.log(result);
+		  for (i in result['Search']) {
+		   	$('#searchResults').append(
+			    "<div class='col s3'>" +
+						"<div class='card cardXS'>" +
+							"<div class='card-image imageXS waves-effect waves-block waves-light'>" +
+				    		"<img class='activator' src='" + result['Search'][i]['Poster'] + "'>" +
+				    	"</div>" +
+				    	"<div class='card-content'>" +
+				    			"<div class='row'>" +
+									  "<div class='boxTitleXS col s11'>" +
+									    "<span class='card-title title activator grey-text text-darken-4'>" + result['Search'][i]['Title'] + "</span>" +
+									  "</div>" +
+									  "<div class='col s1'>" +
+									    "<i class='material-icons right'>more_vert</i>" +
+									  "</div>" +
+									"</div>" +
+									"<div class='row'>" +
+									  "<div class='col s6'>" +
+									    "<span>" + result['Search'][i]['Year'] + "</span>" +
+									  "</div>" +
+									  "<div class='col s6'>" +
+									    "<a class='btnMylist right'><i class='btnList material-icons'>add</i></a>" +
+				      				"<a class='btnPending right'><i class='btnList material-icons'>access_time</i></a>" +
+            					"<a class='btnViewed right'><i class='btnList material-icons'>done</i></a>" +
+									  "</div>" +
+									"</div>" +
+				    	"</div>" +
+				    	"<div class='card-reveal'>" +
+				    			"<span class='card-title grey-text text-darken-4'>" + result['Search'][i]['Title'] + "<i class='material-icons right'>close</i></span>" +
+				      		"<p>" + result['Search'][i]['Year'] + "</p>" +
+				    	"</div>" +
+						"</div>" +
+					"</div>"
+		   	);
+		  }
+    });
+  });
 
-  $('#btnSearch').click(function () {
+  /*$('#btnSearch').click(function () {
     console.log($('#search').val());
     var url = 'http://www.omdbapi.com/?apikey=942bd4df&s=' + $('#search').val();
     var request = new XMLHttpRequest();
@@ -239,7 +283,7 @@ $(document).ready(function () {
 
       listatitulos.append(collectionitem);
     };
-  });
+  });*/
 
   $(document).on('click', '.btnMylist', function () {
     // Your Code

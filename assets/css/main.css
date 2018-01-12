@@ -267,7 +267,6 @@ a:hover {
   width: 40%;
 }
 
-
 .divContent,
 .divContentP {
   text-align: center;
@@ -293,12 +292,20 @@ a:hover {
   width: 4em;
 }
 
-.card-image {
+.imageXL {
   height: 30em!important;
 }
 
-.card {
+.imageXS {
+  height: 15em!important;
+}
+
+.cardXL {
   height: 39em!important;
+}
+
+.cardXS {
+  height: 20em!important;
 }
 
 .btnList {
@@ -308,9 +315,14 @@ a:hover {
   display: inline-block;
 }
 
-.boxTitle {
+.boxTitleXL {
   overflow: hidden;
   max-height: 2.5em;
+}
+
+.boxTitleXS {
+  overflow: hidden;
+  max-height: 1.25em;
 }
 
 .indicator  {
