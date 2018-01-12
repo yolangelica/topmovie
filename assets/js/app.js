@@ -1,38 +1,39 @@
 /* ========== AUTENTICACION FIREBASE =========== */
-
+var counterPending = 0;
+var counterViews = 0;
 // SIGN UP:
 function signUp() {
 
-	var newUserName = $('#newUserName').val();
-	var newName = $('#newName').val();
-	var newLastName = $('#newLastName').val();
-	var newUserName = $('#newUserName').val();
-	var newEmail = $('#newEmail').val();
-	var newPassword = $('#newPassword').val();
+  var newUserName = $('#newUserName').val();
+  var newName = $('#newName').val();
+  var newLastName = $('#newLastName').val();
+  var newUserName = $('#newUserName').val();
+  var newEmail = $('#newEmail').val();
+  var newPassword = $('#newPassword').val();
 
   firebase.auth().createUserWithEmailAndPassword(newEmail, newPassword)
-  .catch(function (error) {
-  	// Handle Errors here.
-    var errorCode = error.code;
-    var errorMessage = error.message;
-    // ...
-  });
+    .catch(function (error) {
+      // Handle Errors here.
+      var errorCode = error.code;
+      var errorMessage = error.message;
+      // ...
+    });
 }
 
 // SIGN IN:
 function signIn() {
 
-	var email = $('#email').val();
-	var password = $('#password').val();
+  var email = $('#email').val();
+  var password = $('#password').val();
 
   firebase.auth().signInWithEmailAndPassword(email, password)
-  .catch(function (error) {
-  	// console.log('Ingreso exitoso!');
-    // Handle Errors here.
-    var errorCode = error.code;
-    var errorMessage = error.message;
-    // ...
-  });
+    .catch(function (error) {
+      // console.log('Ingreso exitoso!');
+      // Handle Errors here.
+      var errorCode = error.code;
+      var errorMessage = error.message;
+      // ...
+    });
 }
 
 // OBSERVADOR DE ESTADO:
@@ -312,6 +313,11 @@ $(document).ready(function () {
 
   $(document).on('click', '.btnPending', function () {
     // Your Code
+    var containerNumberPending = $('.containerNumberPending');
+    counterPending++;
+    containerNumberPending.html('');
+    containerNumberPending.append(counterPending);
+
     var searchPending = ($(this).parent().parent().find('.title').text());
     var urlPending = 'http://www.omdbapi.com/?apikey=942bd4df&t=' + searchPending;
     var request = new XMLHttpRequest();
@@ -328,12 +334,52 @@ $(document).ready(function () {
       var directorModalPending = infoTitlePending.Director;
       var plotModalPending = infoTitlePending.Plot;
       // console.log(PosterModal, titleModal, yearModal, actorsModal, directorModal, plotModal);
-      var newName = $('.modalPending')
-        .append(titleModalPending);
+      //Agregar a Modal=================
+
+      var newNameP = $('.modalPending');
+
+
+      var divContent = $('<div></div>');
+      divContent.addClass('divContentP');
+      var imgContent = $('<img>')
+        .attr({
+          'src': PosterModalPending,
+          'alt': ""
+        })
+        .addClass('imgContent');
+      var texto = $('<h5></h5>')
+        .text(titleModalPending)
+        .addClass('texto');
+      divContent.append(imgContent, texto);
+      newNameP.append(divContent);
+
+      //Agregar a Perfil=================
+      var newNamePP = $('.listPending');
+      var divContentP = $('<div></div>')
+        .addClass('slide');
+      var imgContentP = $('<img>')
+        .attr({
+          'src': PosterModalPending,
+          'alt': ""
+        });
+      imgContentP.addClass('posterList responsive-img');
+      var textoP = $('<h5></h5>')
+        .text(titleModalPending)
+        .addClass('texto');
+      divContentP.append(imgContentP, textoP);
+      newNamePP.append(divContentP);
+
+
     };
   });
   $(document).on('click', '.btnViewed', function () {
     // Your Code
+    console.log('Presionado Visto');
+    var containerNumberViews = $('.containerNumberViews');
+    counterViews++;
+    containerNumberViews.html('');
+    containerNumberViews.append(counterViews);
+
     var searchViewed = ($(this).parent().parent().find('.title').text());
     var urlViewed = 'http://www.omdbapi.com/?apikey=942bd4df&t=' + searchViewed;
     var request = new XMLHttpRequest();
@@ -350,13 +396,43 @@ $(document).ready(function () {
       var directorModalViewed = infoTitleViewed.Director;
       var plotModalViewed = infoTitleViewed.Plot;
       // console.log(PosterModal, titleModal, yearModal, actorsModal, directorModal, plotModal);
-      var newName = $('.modalViewed')
-        .append(titleModalViewed);
+
+      //Agregar a Modal=================
+      var newName = $('.modalViewed');
+      var divContent = $('<div></div>')
+        .addClass('divContent');
+      var imgContent = $('<img>')
+        .attr({
+          'src': PosterModalViewed,
+          'alt': ""
+        })
+        .addClass('imgContent');
+      var texto = $('<h5></h5>')
+        .text(titleModalViewed)
+        .addClass('texto');
+      divContent.append(imgContent, texto);
+      newName.append(divContent);
+
+      //Agregar a Perfil=================
+      var newNameV = $('.listViews');
+      var divContentV = $('<div></div>')
+        .addClass('slide');
+      var imgContentV = $('<img>')
+        .attr({
+          'src': PosterModalViewed,
+          'alt': ""
+        })
+        .addClass('posterList responsive-img');
+      var textoV = $('<h5></h5>')
+        .text(titleModalViewed)
+        .addClass('texto');
+      divContentV.append(imgContentV, textoV);
+      newNameV.append(divContentV);
     };
   });
 });
 
- /* ====== CARRUSEL NETFLIX ====== */
+/* ====== CARRUSEL NETFLIX ====== */
 
 var scaling = 1.50;
 //count
@@ -471,14 +547,15 @@ function controls(frameWidth, scollWidth) {
 };
 
 //Función botón perfil desplegable
- $(".button-collapse").sideNav(); 
+$(".button-collapse").sideNav();
 
- //Funcion crea titulo nuevas listas
- var idPin= 0 ;
-function saveList(){
-  var titulo = $("#titlelist").val();//crea variable para rescatar valor escrito por usuario en titulo llamando ID desde HTML
-  $("#lineNew").append("<div id='pin_" + idPin + " ' class='pin col-md-3'>" + 
-  //este es el frente
-  "<h6 class='flow-text white-text titleList'>" + titulo + "</h6>" + "</div>");
+//Funcion crea titulo nuevas listas
+var idPin = 0;
+
+function saveList() {
+  var titulo = $("#titlelist").val(); //crea variable para rescatar valor escrito por usuario en titulo llamando ID desde HTML
+  $("#lineNew").append("<div id='pin_" + idPin + " ' class='pin col-md-3'>" +
+    //este es el frente
+    "<h6 class='flow-text white-text titleList'>" + titulo + "</h6>" + "</div>");
   $('#titlelist').val("");
 };

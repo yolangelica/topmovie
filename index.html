@@ -1,4 +1,5 @@
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +9,7 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/main.css">
 </head>
+
 <body>
   <header>
     <!-- Navbar -->
@@ -16,7 +18,8 @@
         <img src="assets/img/Popcorn (2).png" alt="" class="logo">
         <ul class="right hide-on-med-and-down">
           <li>
-            <a href="#ModalSearch" class="text-nav modal-trigger" id="btnSearch"><i class="material-icons left">search</i>Buscar</a>
+            <a href="#ModalSearch" class="text-nav modal-trigger" id="btnSearch">
+              <i class="material-icons left">search</i>Buscar</a>
           </li>
           <li>
             <a class="text-nav" id="btnHome">Home</a>
@@ -28,12 +31,14 @@
           <div id="ModalSearch" class="modal">
             <div class="modal-content colorViews">
               <input id="title_input" type="text" required autocomplete=off>
-              <div class="modalViewed"></div>
+              <div class="modalSearch"></div>
             </div>
             <div class="modal-footer">
-              <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat"><i class="material-icons">close</i></a>
+              <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">
+                <i class="material-icons">close</i>
+              </a>
             </div>
-          </div> 
+          </div>
           <!-- Inicio del Modal Viewed -->
           <div id="ModalViewed" class="modal">
             <div class="modal-content colorViews">
@@ -41,7 +46,9 @@
               <div class="modalViewed"></div>
             </div>
             <div class="modal-footer">
-              <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat"><i class="material-icons">close</i></a>
+              <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">
+                <i class="material-icons">close</i>
+              </a>
             </div>
           </div>
           <!-- Fin del Modal Viewed -->
@@ -55,7 +62,9 @@
               <div class="modalPending"></div>
             </div>
             <div class="modal-footer">
-              <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat"><i class="material-icons">close</i></a>
+              <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">
+                <i class="material-icons">close</i>
+              </a>
             </div>
           </div>
           <!-- Fin del Modal Pending -->
@@ -69,7 +78,9 @@
               <div class="modalList"></div>
             </div>
             <div class="modal-footer">
-              <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat"><i class="material-icons">close</i></a>
+              <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">
+                <i class="material-icons">close</i>
+              </a>
             </div>
           </div>
           <!-- Fin del Modal Mylist -->
@@ -210,7 +221,8 @@
     <div class="row">
       <div class="col s12">
         <div id="videoCover" class="video-container">
-          <iframe id="video-background" width="560" height="315" src="https://www.youtube.com/embed/n7RkOfN8KvE/ID_VIDEO?rel=0&autoplay=1 ?wmode=transparent"   frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+          <iframe id="video-background" width="560" height="315" src="https://www.youtube.com/embed/n7RkOfN8KvE/ID_VIDEO?rel=0&autoplay=1 ?wmode=transparent"
+            frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
         </div>
       </div>
     </div>
@@ -222,35 +234,35 @@
     </div>
     <!-- Pestañas Sugerencias Películas y Series -->
     <!--div class="container-fluid"-->
-      <div class="row">
-        <div class="col s12">
-          <ul class="tabs tabs-fixed-width grey darken-4">
-            <li class="tab col s6">
-              <a class='btnTop white-text' name='movie' href='#movie'>Películas</a>
-            </li>
-            <li class="tab col s6">
-              <a class='btnTop white-text' name='series' href='#series'>Series</a>
-            </li>
-          </ul>
-        </div>
-        <div id="movie" class="col s6">
-          <ul id="collection-movie" class="collection">
-          </ul>
-        </div>
-        <div id="series" class="col s6 offset-s6">
-          <ul id="collection-serie" class="collection">
-          </ul>
-        </div>
+    <div class="row">
+      <div class="col s12">
+        <ul class="tabs tabs-fixed-width grey darken-4">
+          <li class="tab col s6">
+            <a class='btnTop white-text' name='movie' href='#movie'>Películas</a>
+          </li>
+          <li class="tab col s6">
+            <a class='btnTop white-text' name='series' href='#series'>Series</a>
+          </li>
+        </ul>
       </div>
-      <!-- BOTONES ORIGINALES SERIES Y PELICULAS -->
-      <!--<div class="col s12 center-align">
+      <div id="movie" class="col s6">
+        <ul id="collection-movie" class="collection">
+        </ul>
+      </div>
+      <div id="series" class="col s6 offset-s6">
+        <ul id="collection-serie" class="collection">
+        </ul>
+      </div>
+    </div>
+    <!-- BOTONES ORIGINALES SERIES Y PELICULAS -->
+    <!--<div class="col s12 center-align">
         <a id="movie" class="purple waves-effect waves-light btn btnTop">
           <i class="material-icons left">local_movies</i>Películas</a>
         <a id="series" class="purple waves-effect waves-light btn btnTop">
           <i class="material-icons left">local_movies</i>Series</a>
         <!-- <a id="episode" class="purple waves-effect waves-light btn btnTop"> <i class="material-icons left">local_movies</i>Episodios</a> -->
-      <!--</div> -->
-      <!-- <div class="col s12 ">
+    <!--</div> -->
+    <!-- <div class="col s12 ">
         <ul id="collection-id" class="collection">
           <!-- <li class="collection-item avatar">
               <img src="images/yuna.jpg" alt="" class="circle">
@@ -273,38 +285,66 @@
               <div class="background">
                 <img src="assets/img/fondo.jpg">
               </div>
-              <a href="#!user"><img class="circle responsive-img" src="assets/img/mujer.jpg"></a>
-              <a href="#!name"><span class="black-text name"><h6>John Doe</h6></span></a>
-              <a href="#!email"><span class="black-text email ">jdandturk@gmail.com</span></a>
+              <a href="#!user">
+                <img class="circle responsive-img" src="assets/img/mujer.jpg">
+              </a>
+              <a href="#!name">
+                <span class="black-text name">
+                  <h6>John Doe</h6>
+                </span>
+              </a>
+              <a href="#!email">
+                <span class="black-text email ">jdandturk@gmail.com</span>
+              </a>
             </div>
           </li>
           <img src="assets/img/Popcorn (2).png" alt="" class="logoProfile responsive-img">
-          <li><a href="#!" class="white-text"><h5>Mi Filmoteca</h5></a></li>
-          <li><div class="divider"></div></li>
-          <li><a class="subheader white-text">Vistas<span class="badge purple lighten-1 white-text containerNumber">4</span></a></li>
-          <li><a class="waves-effect white-text" href="#!">Por ver<span class="badge purple lighten-1 white-text containerNumber">4</span></a></li>
-          <li><a class="waves-effect white-text" href="#!">Mis Listas<span class="badge purple lighten-1 white-text containerNumber">4</span></a></li>
+          <li>
+            <a href="#!" class="white-text">
+              <h5>Mi Filmoteca</h5>
+            </a>
+          </li>
+          <li>
+            <div class="divider"></div>
+          </li>
+          <li>
+            <a class="subheader white-text">Vistas
+              <span class="badge purple lighten-1 white-text containerNumber">4</span>
+            </a>
+          </li>
+          <li>
+            <a class="waves-effect white-text" href="#!">Por ver
+              <span class="badge purple lighten-1 white-text containerNumber">4</span>
+            </a>
+          </li>
+          <li>
+            <a class="waves-effect white-text" href="#!">Mis Listas
+              <span class="badge purple lighten-1 white-text containerNumber">4</span>
+            </a>
+          </li>
         </ul>
       </div>
     </div>
     <div class="row">
       <div class="col m12 l12">
         <div class="container">
-          <a href="#" data-activates="slide-out" class="button-collapse right btn-floating pulse pulse black "><i class="material-icons  text-lighten-1">menu</i></a>
+          <a href="#" data-activates="slide-out" class="button-collapse right btn-floating pulse pulse black ">
+            <i class="material-icons  text-lighten-1">menu</i>
+          </a>
         </div>
       </div>
     </div>
     <div class="row">
       <div class="col l12">
-        <div class="slider-frame"> 
+        <div class="slider-frame">
           <h6 class="flow-text white-text titleList">Películas vistas</h6>
           <div class="btnNetflix prev"></div>
           <div class="btnNetflix next"></div>
-          <div class="slider-container">
-            <div class="slide"><img class="posterList responsive-img" src="assets/img/milista2.jpg">
+          <div class="slider-container listViews">
+            <!-- <div class="slide"><img class="posterList responsive-img" src="assets/img/milista2.jpg">
             </div>
             <div class="slide"><img class="posterList responsive-img" src="assets/img/milista5jpg.jpg">
-            </div>
+            </div> -->
             <!--ACA PEGAR PELICULAS AL SELECCIONAR BOTON VISTAS-->
           </div>
         </div>
@@ -316,10 +356,10 @@
           <h6 class="flow-text white-text titleList">Pendientes</h6>
           <div class="btnNetflix prev"></div>
           <div class="btnNetflix next"></div>
-          <div class="slider-container">
-            <div class="slide"><img class="posterList" src="http://es.web.img2.acsta.net/pictures/17/05/03/08/45/266320.jpg"></div>
+          <div class="slider-container listPending">
+            <!-- <div class="slide"><img class="posterList" src="http://es.web.img2.acsta.net/pictures/17/05/03/08/45/266320.jpg"></div>
             <div class="slide"><img class="posterList" src="https://images-na.ssl-images-amazon.com/images/M/MV5BZDNhNzhkNDctOTlmOS00NWNmLWEyODQtNWMxM2UzYmJiNGMyXkEyXkFqcGdeQXVyNTMxMjgxMzA@._V1_SX300.jpg"></div>
-            <div class="slide"><img class="posterList" src="https://images-na.ssl-images-amazon.com/images/M/MV5BMTU1OTcwNjg2Nl5BMl5BanBnXkFtZTgwOTk0NTk0MjI@._V1_SX300.jpg"></div>
+            <div class="slide"><img class="posterList" src="https://images-na.ssl-images-amazon.com/images/M/MV5BMTU1OTcwNjg2Nl5BMl5BanBnXkFtZTgwOTk0NTk0MjI@._V1_SX300.jpg"></div> -->
             <!--ACA PEGAR PELICULAS AL SELECCIONAR BOTON VISTAS-->
           </div>
         </div>
@@ -330,48 +370,74 @@
   <section class="hide" id="myList">
     <div class="row">
       <div class="col l6">
-        <h3 class="white-text" >Mis Listas</h3>
+        <h3 class="white-text">Mis Listas</h3>
       </div>
       <div class="col l6">
-        <div class="container"><!--crea titulo listas peliculas-->
-          <form action="javascript:saveList()"><!--llama a funcion crear listas peliculas -->
+        <div class="container">
+          <!--crea titulo listas peliculas-->
+          <form action="javascript:saveList()">
+            <!--llama a funcion crear listas peliculas -->
             <div class="input-group">
               <span class="input-group-addon white-text"></span>
               <input id="titlelist" type="text" class="form-control width-text white-text" aria-describedby="titulo" placeholder="Agrega una lista">
             </div>
             <button type="submit" class="btn btn-default  black">Guardar</button>
           </form>
-        </div><!--close container crear listas-->
+        </div>
+        <!--close container crear listas-->
       </div>
-        <div class="slider-frame">
-          <h6 class="flow-text white-text titleList">Harry Potter</h6>
-          <div class="btnNetflix prev"></div>
-          <div class="btnNetflix next"></div>
-          <div class="slider-container">
-            <div class="slide"><img class="posterList" src="https://images-na.ssl-images-amazon.com/images/M/MV5BNjQ3NWNlNmQtMTE5ZS00MDdmLTlkZjUtZTBlM2UxMGFiMTU3XkEyXkFqcGdeQXVyNjUwNzk3NDc@._V1_SX300.jpg"></div>
-            <div class="slide"><img class="posterList" src="https://images-na.ssl-images-amazon.com/images/M/MV5BMTcxODgwMDkxNV5BMl5BanBnXkFtZTYwMDk2MDg3._V1_SX300.jpg"></div>
-            <div class="slide"><img class="posterList" src="https://images-na.ssl-images-amazon.com/images/M/MV5BMTY4NTIwODg0N15BMl5BanBnXkFtZTcwOTc0MjEzMw@@._V1_SX300.jpg"></div>
-            <div class="slide"><img class="posterList" src="https://images-na.ssl-images-amazon.com/images/M/MV5BMTI1NDMyMjExOF5BMl5BanBnXkFtZTcwOTc4MjQzMQ@@._V1_SX300.jpg"></div>
-            <div class="slide"><img class="posterList" src="https://images-na.ssl-images-amazon.com/images/M/MV5BMTM0NTczMTUzOV5BMl5BanBnXkFtZTYwMzIxNTg3._V1_SX300.jpg"></div>
-            <div class="slide"><img class="posterList" src="https://images-na.ssl-images-amazon.com/images/M/MV5BNzU3NDg4NTAyNV5BMl5BanBnXkFtZTcwOTg2ODg1Mg@@._V1_SX300.jpg"></div>
-            <div class="slide"><img class="posterList" src="https://images-na.ssl-images-amazon.com/images/M/MV5BMTQ2OTE1Mjk0N15BMl5BanBnXkFtZTcwODE3MDAwNA@@._V1_SX300.jpg"></div>
-            <div class="slide"><img class="posterList" src="https://images-na.ssl-images-amazon.com/images/M/MV5BMjIyZGU4YzUtNDkzYi00ZDRhLTljYzctYTMxMDQ4M2E0Y2YxXkEyXkFqcGdeQXVyNTIzOTk5ODM@._V1_SX300.jpg"></div>
+      <div class="slider-frame">
+        <h6 class="flow-text white-text titleList">Harry Potter</h6>
+        <div class="btnNetflix prev"></div>
+        <div class="btnNetflix next"></div>
+        <div class="slider-container">
+          <div class="slide">
+            <img class="posterList" src="https://images-na.ssl-images-amazon.com/images/M/MV5BNjQ3NWNlNmQtMTE5ZS00MDdmLTlkZjUtZTBlM2UxMGFiMTU3XkEyXkFqcGdeQXVyNjUwNzk3NDc@._V1_SX300.jpg">
+          </div>
+          <div class="slide">
+            <img class="posterList" src="https://images-na.ssl-images-amazon.com/images/M/MV5BMTcxODgwMDkxNV5BMl5BanBnXkFtZTYwMDk2MDg3._V1_SX300.jpg">
+          </div>
+          <div class="slide">
+            <img class="posterList" src="https://images-na.ssl-images-amazon.com/images/M/MV5BMTY4NTIwODg0N15BMl5BanBnXkFtZTcwOTc0MjEzMw@@._V1_SX300.jpg">
+          </div>
+          <div class="slide">
+            <img class="posterList" src="https://images-na.ssl-images-amazon.com/images/M/MV5BMTI1NDMyMjExOF5BMl5BanBnXkFtZTcwOTc4MjQzMQ@@._V1_SX300.jpg">
+          </div>
+          <div class="slide">
+            <img class="posterList" src="https://images-na.ssl-images-amazon.com/images/M/MV5BMTM0NTczMTUzOV5BMl5BanBnXkFtZTYwMzIxNTg3._V1_SX300.jpg">
+          </div>
+          <div class="slide">
+            <img class="posterList" src="https://images-na.ssl-images-amazon.com/images/M/MV5BNzU3NDg4NTAyNV5BMl5BanBnXkFtZTcwOTg2ODg1Mg@@._V1_SX300.jpg">
+          </div>
+          <div class="slide">
+            <img class="posterList" src="https://images-na.ssl-images-amazon.com/images/M/MV5BMTQ2OTE1Mjk0N15BMl5BanBnXkFtZTcwODE3MDAwNA@@._V1_SX300.jpg">
+          </div>
+          <div class="slide">
+            <img class="posterList" src="https://images-na.ssl-images-amazon.com/images/M/MV5BMjIyZGU4YzUtNDkzYi00ZDRhLTljYzctYTMxMDQ4M2E0Y2YxXkEyXkFqcGdeQXVyNTIzOTk5ODM@._V1_SX300.jpg">
           </div>
         </div>
       </div>
-      <div class="col l12">
-        <div class="slider-frame">
-          <h6 class="flow-text white-text titleList">Series para el verano</h6>
-          <div class="btnNetflix prev"></div>
-          <div class="btnNetflix next"></div>
-          <div class="slider-container">
-            <div class="slide"><img class="posterList" src="http://es.web.img2.acsta.net/pictures/17/05/03/08/45/266320.jpg"></div>
-            <div class="slide"><img class="posterList" src="https://images-na.ssl-images-amazon.com/images/M/MV5BZDNhNzhkNDctOTlmOS00NWNmLWEyODQtNWMxM2UzYmJiNGMyXkEyXkFqcGdeQXVyNTMxMjgxMzA@._V1_SX300.jpg"></div>
-            <div class="slide"><img class="posterList" src="https://images-na.ssl-images-amazon.com/images/M/MV5BMTU1OTcwNjg2Nl5BMl5BanBnXkFtZTgwOTk0NTk0MjI@._V1_SX300.jpg"></div>
+    </div>
+    <div class="col l12">
+      <div class="slider-frame">
+        <h6 class="flow-text white-text titleList">Series para el verano</h6>
+        <div class="btnNetflix prev"></div>
+        <div class="btnNetflix next"></div>
+        <div class="slider-container">
+          <div class="slide">
+            <img class="posterList" src="http://es.web.img2.acsta.net/pictures/17/05/03/08/45/266320.jpg">
+          </div>
+          <div class="slide">
+            <img class="posterList" src="https://images-na.ssl-images-amazon.com/images/M/MV5BZDNhNzhkNDctOTlmOS00NWNmLWEyODQtNWMxM2UzYmJiNGMyXkEyXkFqcGdeQXVyNTMxMjgxMzA@._V1_SX300.jpg">
+          </div>
+          <div class="slide">
+            <img class="posterList" src="https://images-na.ssl-images-amazon.com/images/M/MV5BMTU1OTcwNjg2Nl5BMl5BanBnXkFtZTgwOTk0NTk0MjI@._V1_SX300.jpg">
           </div>
         </div>
       </div>
-      <div  id="lineNew"><!--imprime titulo nueva lista-->
+    </div>
+    <div id="lineNew">
+      <!--imprime titulo nueva lista-->
     </div>
   </section>
   <footer class="page-footer black">
@@ -456,4 +522,5 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
   <script src="assets/js/app.js"></script>
 </body>
+
 </html>
