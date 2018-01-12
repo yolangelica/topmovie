@@ -1,217 +1,277 @@
 * {
-  margin: 0;
-  padding: 0;
-  font-family: 'Acme', sans-serif;
+    margin: 0;
+    padding: 0;
+    font-family: 'Acme', sans-serif;
 }
 
 body {
-  background-color: #212121;
+    background-color: #212121;
 }
 
 nav {
-  height: 94px;
-  line-height: 94px;
+    height: 94px;
+    line-height: 94px;
 }
 
 .logo {
-  width: 16em;
-  margin: 1em 2em;
+    width: 16em;
+    margin: 1em 2em;
 }
 
 .txt {
-  font-size: 1.5em;
-  color: #858d99;
+    font-size: 1.5em;
+    color: #858d99;
 }
 
 a:hover {
-  color: #ab47bc;
+    color: #ab47bc;
 }
 
 .box-input {
-  box-sizing: inherit;
-  border-radius: 0.5em;
+    box-sizing: inherit;
+    border-radius: 0.5em;
 }
 
 .txt-1 {
-  color: #fff;
+    color: #fff;
 }
 
 .txt-2 {
-  color: #fff;
+    color: #fff;
 }
+
 
 /* Navegador */
 
 .text-nav {
-  color: #bdbdbd;
+    color: #bdbdbd;
 }
 
 
 /* Modal Sign In */
 
 .modalTxt {
-  padding-top: 0.5em;
+    padding-top: 0.5em;
 }
 
 .fa {
-  color: #9c27b0;
-  padding: 1em 0.8em;
+    color: #9c27b0;
+    padding: 1em 0.8em;
 }
+
 
 /* Modal Sign Up */
 
 #success {
-  font-weight: 600;
-  font-size: 2em;
+    font-weight: 600;
+    font-size: 2em;
 }
+
 
 /* Perfil usuario */
 
-.logoProfile{
-  width: 13em;
-  margin-left:3em;
-  margin-bottom: 2em;
-  margin-top: 1em;
+.logoProfile {
+    width: 13em;
+    margin-left: 3em;
+    margin-bottom: 2em;
+    margin-top: 1em;
 }
 
-.containerNumber{
-  border-radius: 8px;
+.containerNumber {
+    border-radius: 8px;
 }
 
 .colorTextProfile {
-  color: #ab47bc;
+    color: #ab47bc;
 }
 
 .container-profile {
-  border: 1px solid black;
-  padding: 7%;
-  background-color: #FFFFFF;
+    border: 1px solid black;
+    padding: 7%;
+    background-color: #FFFFFF;
 }
 
 .img-profile {
-  margin-left: 29%;
+    margin-left: 29%;
 }
 
 .container-profile-movil {
-  border-bottom: 1px solid black;
+    border-bottom: 1px solid black;
 }
 
 .btn-profile {
-  background-color: black;
-  border-radius: 15px;
-  color: #fff;
+    background-color: black;
+    border-radius: 15px;
+    color: #fff;
 }
 
 .text-profile {
-  color: #fff;
+    color: #fff;
 }
 
 #copyright {
-  margin-left: 40em;
-  text-align: center;
+    margin-left: 40em;
+    text-align: center;
 }
+
 
 /* Video cover */
 
 .slider-frame {
-  position: relative;
-  margin: 0 auto;
-  overflow: hidden;
+    position: relative;
+    margin: 0 auto;
+    overflow: hidden;
 }
 
 .btnNetflix {
-  width: 40px;
-  height: 80%;
-  background: rgba(0, 0, 0, 0.3);
-  position: absolute;
-  top: 0;
-  z-index: 1000;
+    width: 40px;
+    height: 80%;
+    background: rgba(0, 0, 0, 0.3);
+    position: absolute;
+    top: 0;
+    z-index: 1000;
 }
 
 .prev {
-  left: 0px;
+    left: 0px;
 }
 
 .next {
-  right: 0px;
+    right: 0px;
 }
 
 .slider-container {
-  transition: margin-left .2s ease, left .5s ease;
-  position: absolute;
-  left: 0;
+    transition: margin-left .2s ease, left .5s ease;
+    position: absolute;
+    left: 0;
 }
+
 .slide {
-  float: left;
-  position: relative;
-  top: 0;
-  transition: width .2s ease, height .2s ease, top .2s ease;
+    float: left;
+    position: relative;
+    top: 0;
+    transition: width .2s ease, height .2s ease, top .2s ease;
 }
 
 .colorViews {
-  color: #000;
+    color: #000;
 }
 
 #video-background {
-  z-index: 1;
-  opacity: 0.7;
+    z-index: 1;
+    opacity: 0.7;
 }
 
 .text-fondo {
-  position: absolute;
-  z-index: 2;
-  font-size: 2rem;
-  margin-bottom: 100%;
-  padding-bottom:  50px 0;
-  text-align: center;
-  padding-left: 6em;
-  padding-top: 3em;
-  width: 80%;
-  text-shadow: #311b92 ;
+    position: absolute;
+    z-index: 2;
+    font-size: 2rem;
+    margin-bottom: 100%;
+    padding-bottom: 50px 0;
+    text-align: center;
+    padding-left: 6em;
+    padding-top: 3em;
+    width: 80%;
+    text-shadow: #311b92;
 }
 
 .slider-frame {
-  position: relative;
-  margin: 0 auto;
-  overflow: hidden;
+    position: relative;
+    margin: 0 auto;
+    overflow: hidden;
 }
 
-.btnNetflix{
-  width: 40px;
-  height: 100%;
-  background: rgba(0,0,0,0.3);
-  position: absolute;
-  top: 0;
-  z-index: 1000;
+.btnNetflix {
+    width: 40px;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    position: absolute;
+    top: 0;
+    z-index: 1000;
 }
 
 .prev {
-  left: 0px;
+    left: 0px;
 }
 
 .next {
-  right: 0px;
+    right: 0px;
 }
 
 .slider-container {
-  transition: margin-left .2s ease, left .5s ease;
-  position: absolute;
-  left: 0;
+    transition: margin-left .2s ease, left .5s ease;
+    position: absolute;
+    left: 0;
 }
 
 .slide {
-  float: left;
-  position: relative;
-  top: 0;
-  transition: width .2s ease, height .2s ease, top .2s ease;
+    float: left;
+    position: relative;
+    top: 0;
+    transition: width .2s ease, height .2s ease, top .2s ease;
 }
 
-.posterList{
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.posterList {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
-.titleList{
-  margin-left: 2em;
+.titleList {
+    margin-left: 2em;
+}
+
+.titlePoster {
+    margin-bottom: 1em;
+}
+
+.imgPoster,
+.imgPosterP,
+.imgPosterV {
+    border: 0.2em #B097B1 solid;
+    width: 15em;
+}
+
+.titlePoster,
+.titlePosterP,
+.titlePosterV,
+.texto {
+    color: #AD00B1;
+    font-weight: bold;
+    margin-bottom: 3em;
+}
+
+.listViews,
+.listPending,
+.titleCenter {
+    text-align: center;
+}
+
+.createList {
+    border: 0.2em white solid;
+    height: 5em;
+    width: 30em;
+    text-align: center;
+}
+
+#createList {
+    width: 30em;
+    resize: none;
+    margin-top: 0.5em;
+    color: white;
+    padding-left: 1em;
+    padding-top: 1.2em;
+    display: flex;
+    flex-direction: row;
+}
+
+.m_image,
+.imgContent {
+    border: 0.2em rgb(58, 26, 59) solid;
+    width: 40%;
+}
+
+.divContent,
+.divContentP {
+    text-align: center;
 }

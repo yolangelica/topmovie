@@ -1,6 +1,7 @@
 /* ========== AUTENTICACION FIREBASE =========== */
 var counterPending = 0;
 var counterViews = 0;
+
 // SIGN UP:
 function signUp() {
 
