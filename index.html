@@ -18,13 +18,14 @@
         <img src="assets/img/Popcorn (2).png" alt="" class="logo">
         <ul class="right hide-on-med-and-down">
           <li>
-            <a href="#modalSearch" class="text-nav modal-trigger"><i class="material-icons left">search</i>Buscar</a>
-          </li>
-          <li>
             <a class="text-nav" id="btnHome">Home</a>
           </li>
           <li>
-            <a href="#ModalViewed" class="text-nav modal-trigger" id="btnViewed">Vistas</a>
+            <a href="#modalSearch" class="text-nav modal-trigger"><i class="material-icons left">search</i>Buscar</a>
+          </li>
+          
+          <li>
+            <a href="#ModalViewed" class="text-nav modal-trigger" id="btnViewed">Vistas<span class="badge purple lighten-1 white-text containerNumber containerNumberViews"></span></a><!--inserta contador en nav-->
           </li>
           <!--Modal Búsqueda-->
           <div id="modalSearch" class="modal">
@@ -59,7 +60,7 @@
           </div>
           <!-- Fin del Modal Viewed -->
           <li>
-            <a href="#modalPending" class="text-nav modal-trigger" id="btnPending">Pendientes</a>
+            <a href="#modalPending" class="text-nav modal-trigger" id="btnPending">Pendientes<span class="badge purple lighten-1 white-text containerNumber containerNumberPending"></span></a><!--inserta contador en nav-->
           </li>
           <!-- Inicio del Modal Pending -->
           <div id="modalPending" class="modal">
@@ -299,12 +300,12 @@
           </li>
           <li>
             <a class="subheader white-text">Vistas
-              <span class="badge purple lighten-1 white-text containerNumberViews"></span>
+              <span class="badge purple lighten-1 white-text containerNumber containerNumberViews"></span>
             </a>
           </li>
           <li>
             <a class="waves-effect white-text" href="#!">Por ver
-              <span class="badge purple lighten-1 white-text containerNumberPending"></span>
+              <span class="badge purple lighten-1 white-text containerNumber containerNumberPending"></span>
             </a>
           </li>
           <li>

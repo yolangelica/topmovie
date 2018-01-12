@@ -33,38 +33,38 @@ a:hover {
 }
 
 .txt-1 {
-    color: #fff;
+  color: #fff;
 }
 
 .txt-2 {
-    color: #fff;
+  color: #fff;
 }
 
 
 /* Navegador */
 
 .text-nav {
-    color: #bdbdbd;
+  color: #bdbdbd;
 }
 
 
 /* Modal Sign In */
 
 .modalTxt {
-    padding-top: 0.5em;
+  padding-top: 0.5em;
 }
 
 .fa {
-    color: #9c27b0;
-    padding: 1em 0.8em;
+  color: #9c27b0;
+  padding: 1em 0.8em;
 }
 
 
 /* Modal Sign Up */
 
 #success {
-    font-weight: 600;
-    font-size: 2em;
+  font-weight: 600;
+  font-size: 2em;
 }
 
 
