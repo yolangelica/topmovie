@@ -341,3 +341,7 @@ a:hover {
 .tabs {
   margin-bottom: 3em!important;
 }
+#modalSearch{
+  width: 100%; 
+
+}

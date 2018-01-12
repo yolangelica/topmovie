@@ -221,10 +221,10 @@ $(document).ready(function () {
 									  "<div class='col s6'>" +
 									    "<span>" + result['Search'][i]['Year'] + "</span>" +
 									  "</div>" +
-									  "<div class='col s6'>" +
-									    "<a class='btnMylist right'><i class='btnList material-icons'>add</i></a>" +
-				      				"<a class='btnPending right'><i class='btnList material-icons'>access_time</i></a>" +
-            					"<a class='btnViewed right'><i class='btnList material-icons'>done</i></a>" +
+									  "<div class='col s12 m10'>" + //cambio para mostrar iconos en linea estaba en s6
+									    "<a class='btnMylist right'><i class='btnList material-icons white-text'>add</i></a>" + //cambie color a blanco el icono
+				      				"<a class='btnPending right'><i class='btnList material-icons white-text'>access_time</i></a>" +
+            					"<a class='btnViewed right'><i class='btnList material-icons white-text'>done</i></a>" +
 									  "</div>" +
 									"</div>" +
 				    	"</div>" +
@@ -238,6 +238,7 @@ $(document).ready(function () {
 		  }
     });
   });
+
 
   /*$('#btnSearch').click(function () {
     console.log($('#search').val());
