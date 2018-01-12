@@ -13,6 +13,10 @@ nav {
     line-height: 94px;
 }
 
+.no-margin{
+  margin: 0 !important;
+}
+
 .logo {
     width: 16em;
     margin: 1em 2em;
@@ -47,6 +51,9 @@ a:hover {
   color: #bdbdbd;
 }
 
+.glass{
+  line-height: 96px !important;
+}
 
 /* Modal Sign In */
 
@@ -162,13 +169,8 @@ a:hover {
     position: absolute;
     z-index: 2;
     font-size: 2rem;
-    margin-bottom: 100%;
-    padding-bottom: 50px 0;
-    text-align: center;
-    padding-left: 6em;
-    padding-top: 3em;
-    width: 80%;
-    text-shadow: #311b92;
+    margin-top: 13em !important;
+    background-color: rgba(0,0,0,0.2)
 }
 
 .slider-frame {
@@ -322,7 +324,7 @@ a:hover {
 
 .boxTitleXS {
   overflow: hidden;
-  max-height: 1.25em;
+  max-height: 2.25em;
 }
 
 .indicator  {
