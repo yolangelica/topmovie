@@ -70,6 +70,17 @@ a:hover {
 
 /* Perfil usuario */
 
+.logoProfile{
+    width: 13em;
+    margin-left:3em;
+    margin-bottom: 2em;
+    margin-top: 1em;
+}
+
+.containerNumber{
+    border-radius: 8px;
+}
+
 .colorTextProfile {
     color: #ab47bc;
 }

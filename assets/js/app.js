@@ -472,3 +472,6 @@ function controls(frameWidth, scollWidth) {
     //$(".slider-container").css("left", scollWidth);
   });
 };
+
+//Funcion boton perfil desplegable
+ $(".button-collapse").sideNav();
