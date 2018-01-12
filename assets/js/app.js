@@ -355,7 +355,7 @@ $(document).ready(function () {
   });
 });
 
-//Carrusel Netflix
+ /* ====== CARRUSEL NETFLIX ====== */
 
 var scaling = 1.50;
 //count
