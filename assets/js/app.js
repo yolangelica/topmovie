@@ -240,52 +240,6 @@ $(document).ready(function () {
   });
 
 
-  /*$('#btnSearch').click(function () {
-    console.log($('#search').val());
-    var url = 'http://www.omdbapi.com/?apikey=942bd4df&s=' + $('#search').val();
-    var request = new XMLHttpRequest();
-    request.open('GET', url);
-    request.responseType = 'json';
-    request.send();
-    $('.video-container').hide();
-
-    request.onload = function () {
-      var titulo = request.response;
-      console.log(titulo);
-
-      var listatitulos = $('#listatitulos');
-      listatitulos.html("");
-
-      var element = titulo.Title;
-      var element2 = titulo.Poster;
-      var element3 = titulo.Plot;
-      //const element2 = 'assets/img/Popcorn (1).png';
-      // console.log(element);
-      //console.log(element2);
-
-      var m_image = $('<img>')
-        .attr({
-          'src': element2,
-          'alt': ""
-        })
-        .addClass("responsive-img ")
-        .css("max-height", "100%");
-
-      var m_title = $('<h2></h2>')
-        .addClass('title')
-        .text(element);
-      var m_plot = $('<span></span>')
-        .addClass('plot')
-        .text(element3);
-
-      var collectionitem = $('<div></div>')
-        .addClass('collection-item avatar')
-        .append(m_image, m_title, m_plot);
-
-      listatitulos.append(collectionitem);
-    };
-  });*/
-
   $(document).on('click', '.btnMylist', function () {
     // Your Code
     var searchMylist = ($(this).parent().parent().find('.title').text());
@@ -553,8 +507,11 @@ var idPin = 0;
 
 function saveList() {
   var titulo = $("#titlelist").val(); //crea variable para rescatar valor escrito por usuario en titulo llamando ID desde HTML
-  $("#lineNew").append("<div id='pin_" + idPin + " ' class='pin col-md-3'>" +
-    //este es el frente
-    "<h6 class='flow-text white-text titleList'>" + titulo + "</h6>" + "</div>");
+  $("#lineNew").append(
+  		"<div id='pin_" + idPin + " ' class='pin col-md-3'>" +
+    	//este es el frente
+    		"<h6 class='flow-text white-text titleList'>" + titulo + "</h6>" + 
+    	"</div>");
+  
   $('#titlelist').val("");
 };
